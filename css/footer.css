@@ -1,0 +1,234 @@
+/* footer.css */
+
+/*
+ * Основной контейнер подвала.
+ * Ширина фиксирована (1480px), высота – 206px.
+ * Используется Flexbox для горизонтальной компоновки:
+ * - justify-content: space-between распределяет свободное пространство между элементами,
+ * - align-items: center выравнивает элементы по вертикали по центру.
+ * Фон (#292928) — тёмно-серый, а padding: 0 107px создаёт отступы слева и справа.
+ */
+.hero-section1 {
+    width: 1480px;
+    height: 206px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #292928;
+    padding: 0 107px;
+    box-sizing: border-box;
+}
+
+/*
+ * Внутри .hero-section1 есть блок с логотипом и текстом.
+ * .lawyer-card отображается как flex-контейнер,
+ * чтобы логотип и текст шли в одну строку.
+ */
+.hero-section1 .lawyer-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*
+ * Блок .legal-info-block содержит дополнительный текст (название или описание).
+ * padding-top: 4px и margin-left: 8px дают небольшой отступ сверху и слева,
+ * чтобы текст не сливался с логотипом.
+ * Цвет текста – белый.
+ */
+.legal-info-block {
+    padding-top: 4px;
+    margin-left: 8px;
+    color: white;
+}
+
+/*
+ * Заголовок подвала, где может быть название сайта или бренда.
+ * Шрифт "Advent Pro" с весом 500 и размером 32px, цвет – белый.
+ * white-space: nowrap предотвращает перенос текста на следующую строку.
+ */
+.legal-title-with-initials {
+    font: 500 32px "Advent Pro", sans-serif;
+    color: white;
+    white-space: nowrap;
+}
+
+/*
+ * .lawyer-services-section – контейнер для основных ссылок меню подвала (например, "Наши юристы", "Услуги").
+ * display: flex с flex-direction: row располагает элементы по горизонтали,
+ * а gap: 70px задаёт расстояние между этими элементами.
+ */
+.lawyer-services-section {
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+}
+
+/*
+ * Ниже мы видим дополнительную настройку для .legal-services-card1 и .testimonial-section.
+ * Они тоже работают как колонки (flex-direction: column),
+ * gap: 25px создаёт вертикальное расстояние между ссылками внутри этих колонок.
+ */
+.legal-services-card1,
+.testimonial-section {
+    display: flex;
+    flex-direction: column; /* Элементы идут вертикально */
+    gap: 25px; /* Вертикальный зазор между ссылками */
+    align-items: flex-start;
+}
+
+/*
+ * .legal-services-card1 – это отдельный контейнер, в котором обычно располагаются ссылки
+ * (например, "Наши юристы", "Услуги"). Flex-контейнер с вертикальной компоновкой.
+ */
+.legal-services-card1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/*
+ * Стили для заголовков ссылок в блоках подвала (например, «Наши юристы», «Услуги»).
+ * font: 500 24px "Advent Pro" — шрифт, жирность и размер.
+ * text-align: left и line-height: 1.2 делают текст читаемым.
+ * text-decoration: none убирает подчёркивание, а color: #FFF даёт белый цвет.
+ */
+.legal-expert-heading,
+.legal-services-heading {
+    margin: 0;
+    font: 500 24px "Advent Pro", sans-serif;
+    text-align: left;
+    line-height: 1.2;
+    text-decoration: none;
+    color: #FFF;
+}
+
+/*
+ * Блок отзывов (testimonial-section) и раздела «О нас» в подвале.
+ * Аналогично, flex-контейнер с вертикальным расположением элементов.
+ * align-items: flex-start выравнивает элементы по левому краю.
+ */
+.testimonial-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/*
+ * Заголовки внутри testimonial-section (например, «Отзывы», «О нас»).
+ * Похожие стили: белый цвет, шрифт "Advent Pro" с жирностью 500, размер 24px.
+ * text-decoration: none убирает стандартное подчёркивание ссылок.
+ */
+.testimonial-heading,
+.testimonial-header {
+    margin: 0;
+    font: 500 24px "Advent Pro", sans-serif;
+    text-align: left;
+    line-height: 1.2;
+    text-decoration: none;
+    color: #FFF;
+}
+
+/*
+ * .privacy-policy-section – это вертикальный блок с ссылками на Политику конфиденциальности
+ * и Пользовательское соглашение.
+ * flex-direction: column располагает ссылки одна под другой.
+ * gap: 15px увеличивает расстояние между ссылками по вертикали.
+ * padding-right: 50px отодвигает блок от правого края (или соседних элементов) на 50px.
+ */
+.privacy-policy-section {
+    display: flex;
+    flex-direction: column; /* Ссылки идут вертикально */
+    align-items: flex-start; /* Выравнивание по левому краю */
+    gap: 15px; /* Вертикальное расстояние между ссылками */
+    padding-right: 50px; /* Горизонтальный отступ от правого или соседнего элемента */
+}
+
+/*
+ * .legal-info-section.footer-links – общий блок, в котором может располагаться .privacy-policy-section
+ * и иконки соцсетей.
+ * flex-direction: row располагает их по горизонтали,
+ * gap: 8px – небольшой зазор между элементами,
+ * padding-top: 13px создаёт отступ сверху,
+ * чтобы отделить ссылки от остального контента.
+ */
+.legal-info-section.footer-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding-top: 13px;
+}
+
+/*
+ * .flex-image-container – контейнер для иконок соцсетей.
+ * flex-direction: row располагает иконки по горизонтали,
+ * gap: 10px задаёт расстояние между иконками.
+ */
+.flex-image-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/*
+ * .box-image – стили для иконок соцсетей (Telegram, VK, YouTube).
+ * Фиксированный размер 49×49 пикселей и object-fit: cover
+ * обеспечивают корректное масштабирование изображений без искажений.
+ */
+.box-image {
+    width: 49px;
+    height: 49px;
+    object-fit: cover;
+}
+
+/*
+ * .footer-menu a – ссылки меню подвала (например, «Наши юристы», «Услуги»).
+ * Имеют белый цвет, убранное подчёркивание,
+ * плавный переход при наведении (transition).
+ * border: 1px solid transparent и border-radius: 8px
+ * позволяют при hover показывать рамку.
+ */
+.footer-menu a {
+    color: #FFF;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+/*
+ * При наведении (.footer-menu a:hover):
+ * фон ссылки меняется на градиент (E6CEAA -> C8A27B),
+ * цвет текста становится тёмно-серым (#292928),
+ * а рамка приобретает цвет градиента (border-color: #E6CEAA).
+ */
+.footer-menu a:hover {
+    background: linear-gradient(90deg, #E6CEAA 0%, #C8A27B 100%);
+    color: #292928;
+    text-decoration: none;
+    border-color: #E6CEAA;
+}
+
+/*
+ * Стили для ссылок в блоке .footer-links (Политика конфиденциальности, Пользовательское соглашение).
+ * Применяется градиент через -webkit-background-clip,
+ * а сам текст становится прозрачным (color: transparent).
+ * При hover текст становится белым и подчёркивается.
+ */
+.footer-links a {
+    background: linear-gradient(90deg, #E6CEAA 0%, #C8A27B 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-decoration: none;
+    transition: color 0.3s, text-decoration 0.3s;
+    border: none;
+    padding: 3px 8px;
+}
+
+.footer-links a:hover {
+    color: white;
+    text-decoration: underline;
+}

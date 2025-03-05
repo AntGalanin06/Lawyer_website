@@ -1,0 +1,517 @@
+/* style.css */
+
+/*
+ * Сброс отступов и базовые стили.
+ * Снимаем стандартные margin и padding,
+ * а также задаём белый фон для всего документа.
+ */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: white;
+}
+
+/*
+ * Основной контейнер страницы.
+ * Имеет фиксированную ширину 1480px
+ * и может центрироваться на экране (margin: 0 auto).
+ */
+.main-content-container {
+    box-sizing: border-box;
+    width: 1480px;
+    background: white;
+    margin: 0 auto; /* Чтобы центрировать по экрану, если нужно */
+}
+.form-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/*
+ * Контейнер для фонового изображения главной секции.
+ * Задаём высоту 800px и фон, который масштабируется (cover).
+ * padding-top: 95px создаёт отступ сверху,
+ * чтобы фон не был скрыт фиксированной шапкой.
+ */
+.legal-services-container {
+    box-sizing: border-box;
+    width: 1480px;
+    height: 800px;
+    /* Отступ сверху, чтобы фон начинался ниже фиксированной шапки */
+    padding-top: 95px;
+    background: url("../img/fond_index.png") 50% / cover no-repeat;
+    border: none;
+}
+
+/*
+ * Лёгкий полупрозрачный overlay для секции (если нужно).
+ * Даёт затемнение или засветление поверх фоновой картинки.
+ */
+.legal-services-section {
+    box-sizing: border-box;
+    width: 100%;
+    background: rgba(41, 41, 40, 0.15);
+}
+
+/*
+ * Секция Hero (баннер).
+ * Здесь располагается основной заголовок, кнопка призыва к действию и баннерное изображение.
+ */
+.hero-section {
+    width: 100%;
+    /* Небольшой отступ сверху, чтобы текст не прилипал к верхней границе */
+    padding-top: 70px;
+}
+.hero-section2 {
+    /* Отступы слева и справа подгоняются под дизайн */
+    padding: 0 100px 0 712px;
+}
+.call-to-action-container1 {
+    position: relative;
+    width: 668px;
+    height: 211px;
+}
+
+/*
+ * Основной крупный текст (слоган) в Hero.
+ * position: absolute; позволяет накладывать его на баннер.
+ */
+.hero-text {
+    position: absolute;
+    margin: 0;
+    font: 500 64px "Advent Pro", sans-serif;
+    color: white;
+}
+
+/*
+ * Кнопка "запросить звонок".
+ * При наведении (hover) меняется градиент фона.
+ */
+.call-to-action-container {
+    position: absolute;
+    top: 118px;
+    left: 309px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 359px;
+    height: 93px;
+    background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.call-to-action-container:hover {
+    background: linear-gradient(135deg, #C8A27B 0%, #E6CEAA 100%);
+}
+.call-to-action-heading {
+    width: 272px;
+    margin: 0;
+    font: 600 36px "Advent Pro", sans-serif;
+    color: #222222;
+    text-align: center;
+}
+
+/*
+ * Отрицательный отступ, чтобы часть картинки заходила выше
+ * (визуальный эффект наложения).
+ * Если не нужно, можно убрать или уменьшить.
+ */
+.negative-margin-top {
+    margin-top: -174px;
+}
+
+/*
+ * Картинка баннера (hero.png),
+ * занимающая заданные размеры (1063×598) с обрезкой по центру (object-fit).
+ */
+.image-container-fullscreen {
+    display: block;
+    width: 1063px;
+    height: 598px;
+    object-fit: cover;
+}
+
+/*
+ * Блок с иконками преимуществ (молоток, кейс, деньги, замок).
+ * legal-services-section1 — обёртка для карточки с преимуществами.
+ */
+.legal-services-section1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -28.5px;
+}
+
+/*
+ * legal-services-card — сама карточка преимуществ.
+ * Применяется полупрозрачный градиент, скруглённые углы и тени.
+ */
+.legal-services-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 1280px;
+    height: 218px;
+    margin: 0 auto;
+    background: linear-gradient(
+            181.72deg,
+            rgba(50, 48, 46, 0.8) 12.41%,
+            rgba(42, 42, 42, 0.8) 211.72%
+    );
+    border-radius: 20px;
+    box-shadow:
+            inset 1px 1px 14px rgba(255, 255, 255, 0.09),
+            inset -1px -1px 20px rgba(0, 0, 0, 0.13),
+            0px 49px 250px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(100px);
+}
+
+/*
+ * feature-box-group — группа элементов (иконка + текст) внутри блока преимуществ.
+ */
+.feature-box-group {
+    display: flex;
+    flex-direction: row;
+    gap: 66px;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 40px 0 26px;
+}
+
+/*
+ * vertical-card-group — контейнер под каждую вертикальную карточку (иконка + текст).
+ */
+.vertical-card-group {
+    width: 195px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.circle-image-with-text {
+    display: block;
+    width: 73px;
+    height: 73px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.hero-text-block {
+    margin: 12px 0 0;
+    font: 600 18px Gabarito;
+    color: white;
+    text-align: center;
+}
+
+/*
+ * Отдельная карточка (legal-services-card2) и иконка (legal-services-icon)
+ * для преимуществ типа "money" или "lock".
+ */
+.legal-services-card2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 197px;
+}
+.legal-services-icon {
+    width: 73px;
+    height: 73px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.legal-assistance-promo-heading {
+    margin-top: 12px;
+    font: 600 18px/21.5px Gabarito;
+    color: white;
+    text-align: center;
+}
+.trust-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 197px;
+    padding-bottom: 22px;
+}
+
+/*
+ * Секция с формой (hero-section3).
+ * Здесь пользователь может оставить заявку на разбор дела.
+ */
+.hero-section3 {
+    padding: 285px 293px 142px;
+    margin-top: -190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.legal-assistance-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/*
+ * Заголовки и текст в форме (слоган, подзаголовок).
+ */
+.legal-message {
+    margin: 0;
+    color: #050505;
+}
+.golden-sunrise-text {
+    font: 600 48px Gabarito;
+    background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.majestic-heading {
+    font: 600 48px Gabarito;
+}
+.legal-notice-text-style {
+    margin: 22px 0 0;
+    font: 400 24px Gabarito;
+    color: #050505;
+    text-align: center;
+}
+
+/*
+ * professional-help-form — обёртка для формы,
+ * contact-form-container — сам контейнер формы.
+ */
+.professional-help-form {
+    width: 100%;
+    padding: 0 112px;
+    margin-top: 48px;
+    display: flex;
+    justify-content: center;
+}
+.contact-form-container {
+    width: 639px;
+    margin: 0 auto;
+}
+.request-call-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/*
+ * Поля ввода (имя, телефон).
+ * input-prompt-container — текст-подсказка + само поле.
+ */
+.input-prompt-container {
+    padding: 0 43px;
+    text-align: left;
+}
+.gabarito-heading {
+    margin: 0;
+    font: 600 24px Gabarito;
+    color: #050505;
+    text-align: left;
+}
+.fullwidth-box {
+    width: 547px;
+    margin-top: 12px;
+}
+.rounded-input-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 75px;
+    padding-left: 28px;
+    color: #8c94a2;
+    background: #ececec;
+    border: none;
+    border-radius: 50px;
+}
+.transparent-input-style {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+/*
+ * Ограничения на длину и placeholder для полей ввода.
+ */
+input[name="username"] {
+    maxlength: 50;
+}
+input[name="phone"] {
+    maxlength: 18;
+    placeholder: "+7 (___) ___-__-__";
+}
+
+/*
+ * Чекбокс согласия (с пользовательским соглашением и политикой).
+ * Здесь же стилизуется блок текста user-consent-text-container.
+ */
+.form-consent-text-container {
+    padding: 0 43px;
+}
+.form-consent-statement-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: flex-start;
+    max-width: 534px;
+    margin: 0 auto;
+}
+.checkbox-wrapper {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+}
+.hidden-checkbox {
+    opacity: 0;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+}
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    margin-right: 8px;
+    position: relative;
+}
+/*
+ * При checked отображаем картинку галочки (check.png) внутри .custom-checkbox
+ */
+.custom-checkbox::after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url("../img/check.png") center/contain no-repeat;
+}
+.hidden-checkbox:checked + .custom-checkbox::after {
+    display: block;
+}
+.user-consent-text-container {
+    width: 490px;
+    margin: 0;
+    color: #050505;
+    font: 400 14px Gabarito;
+    text-align: left;
+}
+
+/*
+ * Кнопка отправки формы
+ */
+.professional-help-button {
+    width: 639px;
+    height: 93px;
+    margin-top: 8px;
+    font: 600 24px Gabarito;
+    color: #222222;
+    background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+}
+.professional-help-button:hover {
+    background: linear-gradient(135deg, #C8A27B 0%, #E6CEAA 100%);
+}
+
+/*
+ * Модальные окна (Политика конфиденциальности, Пользовательское соглашение).
+ * modal-overlay — полупрозрачная подложка,
+ * modal-content — белое окно с текстом.
+ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: fadeIn 0.5s;
+}
+.modal-content {
+    background-color: #fff;
+    border-radius: 20px;
+    max-width: 500px;
+    padding: 20px;
+    margin: 50px auto;
+    position: relative;
+    animation: scaleUp 0.5s;
+    z-index: 1001;
+}
+
+/*
+ * Анимации для плавного появления (fadeIn) и масштабирования (scaleUp).
+ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.modal-overlay.show {
+    display: block;
+}
+
+/*
+ * Стили заголовка и текста в модалке.
+ */
+.modal-content h2 {
+    font: 600 28px "Advent Pro", sans-serif;
+    margin: 0 0 12px 0;
+    color: #000;
+}
+.modal-content p {
+    font: 400 16px Gabarito, sans-serif;
+    margin: 0;
+    color: #222;
+    line-height: 1.4;
+}
+
+/*
+ * Кнопка закрытия модального окна.
+ */
+.modal-close {
+    display: inline-block;
+    margin-top: 20px;
+    background: #000;
+    color: #fff;
+    font: 600 16px Gabarito, sans-serif;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.modal-close:hover {
+    background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
+    color: #292928;
+}

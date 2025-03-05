@@ -1,0 +1,151 @@
+/* header.css */
+
+/*
+ * Основной контейнер шапки и навигационного меню.
+ * Фиксированное позиционирование позволяет шапке оставаться на виду при прокрутке.
+ * Ширина установлена в 1480px, высота – 95px.
+ * Фон шапки – темно-серый (#292928).
+ * z-index: 1000 гарантирует, что шапка будет поверх других элементов.
+ * Flex-контейнер для вертикального расположения (хотя в данном случае вложенные элементы располагаются горизонтально).
+ */
+.main-navigation-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1480px;
+    height: 95px;
+    background: #292928;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*
+ * Контейнер для горизонтальной компоновки элементов в шапке (логотип и меню).
+ * Используется flexbox для выравнивания элементов по центру по вертикали.
+ * Высота контейнера соответствует высоте шапки.
+ * padding-right: 26px задаёт дополнительное пространство справа, если необходимо.
+ */
+.header-navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 95px;
+    padding-right: 26px;
+}
+
+/*
+ * Блок с логотипом.
+ * Используется flexbox для размещения логотипа и сопутствующего текста (название сайта) в одной строке.
+ * margin-right: 60px задаёт отступ справа от логотипа, отделяя его от навигационного меню.
+ */
+.logo-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 60px;
+}
+
+/*
+ * Изображение логотипа.
+ * Задает фиксированные размеры (39px × 39px) и обеспечивает корректное отображение изображения с помощью object-fit: cover.
+ * Убирается стандартная рамка.
+ */
+.avatar-image {
+    display: block;
+    width: 39px;
+    height: 39px;
+    object-fit: cover;
+    border: none;
+}
+
+/*
+ * Блок с названием юриста или компании, находящийся рядом с логотипом.
+ * margin-left: 8px создаёт небольшой отступ между изображением и текстом.
+ * Цвет текста устанавливается в белый.
+ */
+.lawyer-title {
+    margin-left: 8px;
+    color: white;
+}
+
+/*
+ * Заголовок с полным названием или профессиональным титулом.
+ * Используется шрифт "Advent Pro" с весом 500 и размером 32px.
+ * Свойство white-space: nowrap предотвращает перенос текста на несколько строк.
+ */
+.legal-professional-title {
+    font: 500 32px "Advent Pro", sans-serif;
+    color: white;
+    white-space: nowrap;
+}
+
+/*
+ * Контейнер для меню шапки.
+ * Flexbox-расположение элементов меню по горизонтали с заданным зазором (gap: 95px).
+ * align-items: flex-start выравнивает элементы по верхнему краю, что может быть полезно для корректного позиционирования текста.
+ */
+.lawyer-menu-container {
+    display: flex;
+    flex-direction: row;
+    gap: 95px;
+    align-items: flex-start;
+}
+
+/*
+ * Стили для ссылок меню шапки (например, «Наши юристы», «Услуги» и т.д.).
+ * Задает фиксированную ширину (172px) для единообразного расположения.
+ * padding-top: 5px создаёт небольшой отступ сверху для эстетики.
+ * Шрифт – "Advent Pro" с весом 500 и размером 24px, текст выравнивается по центру.
+ * text-decoration: none убирает стандартное подчёркивание ссылок.
+ */
+.lawyer-card-style {
+    box-sizing: border-box;
+    width: 172px;
+    padding-top: 5px;
+    font: 500 24px "Advent Pro", sans-serif;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*
+ * Стили для дополнительных элементов меню, например, для отзывов.
+ * Похожи по стилю на .lawyer-card-style, но с небольшим отличием в нижнем отступе.
+ */
+.testimonial-section-style {
+    box-sizing: border-box;
+    width: 172px;
+    padding-top: 5px;
+    padding-bottom: 4.75px;
+    font: 500 24px "Advent Pro", sans-serif;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*
+ * Общие стили для ссылок меню шапки (через класс .main-nav).
+ * Ссылки имеют белый цвет, без подчёркивания, с плавным переходом (transition) при наведении.
+ * Задаётся прозрачная рамка с закругленными углами и отступами, чтобы при наведении эффект был заметен.
+ */
+.main-nav a {
+    color: #FFF;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+/*
+ * Эффект при наведении на ссылки меню шапки.
+ * Фон меняется на градиент, текст становится темно-серым (#292928), а рамка становится видимой.
+ */
+.main-nav a:hover {
+    background: linear-gradient(90deg, #E6CEAA 0%, #C8A27B 100%);
+    color: #292928;
+    text-decoration: none;
+    border-color: #E6CEAA;
+}
