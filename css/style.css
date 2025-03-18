@@ -1,9 +1,5 @@
-/* style.css */
-
 /*
  * Сброс отступов и базовые стили.
- * Снимаем стандартные margin и padding,
- * а также задаём белый фон для всего документа.
  */
 html, body {
     margin: 0;
@@ -13,16 +9,21 @@ body {
     background: white;
 }
 
+/* Контейнер для центрирования всей страницы */
+.page-wrapper {
+    width: 1480px;    /* Фиксированная ширина */
+    margin: 0 auto;   /* Центрирование по горизонтали */
+    position: relative;
+}
+
 /*
  * Основной контейнер страницы.
- * Имеет фиксированную ширину 1480px
- * и может центрироваться на экране (margin: 0 auto).
  */
 .main-content-container {
     box-sizing: border-box;
     width: 1480px;
     background: white;
-    margin: 0 auto; /* Чтобы центрировать по экрану, если нужно */
+    margin: 0 auto;
 }
 .form-container {
     box-sizing: border-box;
@@ -33,23 +34,18 @@ body {
 
 /*
  * Контейнер для фонового изображения главной секции.
- * Задаём высоту 800px и фон, который масштабируется (cover).
- * padding-top: 95px создаёт отступ сверху,
- * чтобы фон не был скрыт фиксированной шапкой.
  */
 .legal-services-container {
     box-sizing: border-box;
     width: 1480px;
     height: 800px;
-    /* Отступ сверху, чтобы фон начинался ниже фиксированной шапки */
     padding-top: 95px;
     background: url("../img/fond_index.png") 50% / cover no-repeat;
     border: none;
 }
 
 /*
- * Лёгкий полупрозрачный overlay для секции (если нужно).
- * Даёт затемнение или засветление поверх фоновой картинки.
+ * Полупрозрачный overlay для секции.
  */
 .legal-services-section {
     box-sizing: border-box;
@@ -59,15 +55,12 @@ body {
 
 /*
  * Секция Hero (баннер).
- * Здесь располагается основной заголовок, кнопка призыва к действию и баннерное изображение.
  */
 .hero-section {
     width: 100%;
-    /* Небольшой отступ сверху, чтобы текст не прилипал к верхней границе */
     padding-top: 70px;
 }
 .hero-section2 {
-    /* Отступы слева и справа подгоняются под дизайн */
     padding: 0 100px 0 712px;
 }
 .call-to-action-container1 {
@@ -75,22 +68,12 @@ body {
     width: 668px;
     height: 211px;
 }
-
-/*
- * Основной крупный текст (слоган) в Hero.
- * position: absolute; позволяет накладывать его на баннер.
- */
 .hero-text {
     position: absolute;
     margin: 0;
     font: 500 64px "Advent Pro", sans-serif;
     color: white;
 }
-
-/*
- * Кнопка "запросить звонок".
- * При наведении (hover) меняется градиент фона.
- */
 .call-to-action-container {
     position: absolute;
     top: 118px;
@@ -116,20 +99,9 @@ body {
     color: #222222;
     text-align: center;
 }
-
-/*
- * Отрицательный отступ, чтобы часть картинки заходила выше
- * (визуальный эффект наложения).
- * Если не нужно, можно убрать или уменьшить.
- */
 .negative-margin-top {
     margin-top: -174px;
 }
-
-/*
- * Картинка баннера (hero.png),
- * занимающая заданные размеры (1063×598) с обрезкой по центру (object-fit).
- */
 .image-container-fullscreen {
     display: block;
     width: 1063px;
@@ -138,8 +110,7 @@ body {
 }
 
 /*
- * Блок с иконками преимуществ (молоток, кейс, деньги, замок).
- * legal-services-section1 — обёртка для карточки с преимуществами.
+ * Блок с иконками преимуществ.
  */
 .legal-services-section1 {
     display: flex;
@@ -147,11 +118,6 @@ body {
     align-items: center;
     margin-top: -28.5px;
 }
-
-/*
- * legal-services-card — сама карточка преимуществ.
- * Применяется полупрозрачный градиент, скруглённые углы и тени.
- */
 .legal-services-card {
     display: flex;
     flex-direction: column;
@@ -172,10 +138,6 @@ body {
             0px 49px 250px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(100px);
 }
-
-/*
- * feature-box-group — группа элементов (иконка + текст) внутри блока преимуществ.
- */
 .feature-box-group {
     display: flex;
     flex-direction: row;
@@ -184,10 +146,6 @@ body {
     justify-content: space-between;
     padding: 40px 0 26px;
 }
-
-/*
- * vertical-card-group — контейнер под каждую вертикальную карточку (иконка + текст).
- */
 .vertical-card-group {
     width: 195px;
     display: flex;
@@ -208,11 +166,6 @@ body {
     color: white;
     text-align: center;
 }
-
-/*
- * Отдельная карточка (legal-services-card2) и иконка (legal-services-icon)
- * для преимуществ типа "money" или "lock".
- */
 .legal-services-card2 {
     display: flex;
     flex-direction: column;
@@ -241,7 +194,6 @@ body {
 
 /*
  * Секция с формой (hero-section3).
- * Здесь пользователь может оставить заявку на разбор дела.
  */
 .hero-section3 {
     padding: 285px 293px 142px;
@@ -256,10 +208,6 @@ body {
     align-items: center;
     text-align: center;
 }
-
-/*
- * Заголовки и текст в форме (слоган, подзаголовок).
- */
 .legal-message {
     margin: 0;
     color: #050505;
@@ -279,11 +227,6 @@ body {
     color: #050505;
     text-align: center;
 }
-
-/*
- * professional-help-form — обёртка для формы,
- * contact-form-container — сам контейнер формы.
- */
 .professional-help-form {
     width: 100%;
     padding: 0 112px;
@@ -300,11 +243,6 @@ body {
     flex-direction: column;
     gap: 20px;
 }
-
-/*
- * Поля ввода (имя, телефон).
- * input-prompt-container — текст-подсказка + само поле.
- */
 .input-prompt-container {
     padding: 0 43px;
     text-align: left;
@@ -339,10 +277,6 @@ body {
     font-size: 16px;
     font-family: inherit;
 }
-
-/*
- * Ограничения на длину и placeholder для полей ввода.
- */
 input[name="username"] {
     maxlength: 50;
 }
@@ -350,11 +284,6 @@ input[name="phone"] {
     maxlength: 18;
     placeholder: "+7 (___) ___-__-__";
 }
-
-/*
- * Чекбокс согласия (с пользовательским соглашением и политикой).
- * Здесь же стилизуется блок текста user-consent-text-container.
- */
 .form-consent-text-container {
     padding: 0 43px;
 }
@@ -388,9 +317,6 @@ input[name="phone"] {
     margin-right: 8px;
     position: relative;
 }
-/*
- * При checked отображаем картинку галочки (check.png) внутри .custom-checkbox
- */
 .custom-checkbox::after {
     content: "";
     position: absolute;
@@ -411,10 +337,6 @@ input[name="phone"] {
     font: 400 14px Gabarito;
     text-align: left;
 }
-
-/*
- * Кнопка отправки формы
- */
 .professional-help-button {
     width: 639px;
     height: 93px;
@@ -432,12 +354,6 @@ input[name="phone"] {
 .professional-help-button:hover {
     background: linear-gradient(135deg, #C8A27B 0%, #E6CEAA 100%);
 }
-
-/*
- * Модальные окна (Политика конфиденциальности, Пользовательское соглашение).
- * modal-overlay — полупрозрачная подложка,
- * modal-content — белое окно с текстом.
- */
 .modal-overlay {
     display: none;
     position: fixed;
@@ -459,10 +375,6 @@ input[name="phone"] {
     animation: scaleUp 0.5s;
     z-index: 1001;
 }
-
-/*
- * Анимации для плавного появления (fadeIn) и масштабирования (scaleUp).
- */
 @keyframes fadeIn {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -480,10 +392,6 @@ input[name="phone"] {
 .modal-overlay.show {
     display: block;
 }
-
-/*
- * Стили заголовка и текста в модалке.
- */
 .modal-content h2 {
     font: 600 28px "Advent Pro", sans-serif;
     margin: 0 0 12px 0;
@@ -495,10 +403,6 @@ input[name="phone"] {
     color: #222;
     line-height: 1.4;
 }
-
-/*
- * Кнопка закрытия модального окна.
- */
 .modal-close {
     display: inline-block;
     margin-top: 20px;

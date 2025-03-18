@@ -1,5 +1,3 @@
-// script.js
-
 // Дожидаемся полной загрузки DOM, чтобы все элементы были доступны для манипуляций.
 document.addEventListener('DOMContentLoaded', function(){
 
@@ -28,9 +26,6 @@ document.addEventListener('DOMContentLoaded', function(){
 /*
  * Функция openModal
  * Открывает модальное окно по его идентификатору.
- * Аргумент modalId используется для формирования полного идентификатора элемента,
- * например, если modalId равен "privacy", то ищется элемент с id="modal-overlay-privacy".
- * После этого изменяем стиль отображения на 'block' и запрещаем прокрутку страницы (overflow: hidden).
  */
 function openModal(modalId) {
     const overlay = document.getElementById('modal-overlay-' + modalId);
@@ -40,8 +35,7 @@ function openModal(modalId) {
 
 /*
  * Функция closeModal
- * Закрывает модальное окно, изменяя стиль отображения элемента с заданным id на 'none',
- * и восстанавливает прокрутку страницы (overflow: '').
+ * Закрывает модальное окно.
  */
 function closeModal(modalId) {
     const overlay = document.getElementById('modal-overlay-' + modalId);
@@ -51,18 +45,13 @@ function closeModal(modalId) {
 
 /*
  * Функция maskPhone
- * Применяется для форматирования введённого номера телефона.
- * Функция удаляет все символы, кроме цифр, затем проверяет, начинается ли номер с "7".
- * Если да, то удаляет эту цифру, так как формат начинается с +7.
- * Если цифр больше 10, то оставляет только первые 10.
- * Затем создается строка с форматированием вида "+7 (XXX) XXX-XX-XX".
- * Полученный форматированный номер устанавливается в качестве значения поля ввода.
+ * Форматирует введённый номер телефона.
  */
 function maskPhone(input) {
     // Удаляем все нецифровые символы.
     let digits = input.value.replace(/\D/g, '');
 
-    // Если цифр нет, очищаем поле и выходим из функции.
+    // Если цифр нет, очищаем поле.
     if (digits.length === 0) {
         input.value = "";
         return;
@@ -78,7 +67,7 @@ function maskPhone(input) {
         digits = digits.substring(0, 10);
     }
 
-    // Начинаем формировать форматированный номер.
+    // Формируем форматированный номер.
     let formatted = '+7 (' + digits.substring(0, 3);
     if (digits.length >= 3) {
         formatted += ') ' + digits.substring(3, 6);
@@ -90,19 +79,16 @@ function maskPhone(input) {
         formatted += '-' + digits.substring(8, 10);
     }
 
-    // Устанавливаем форматированный номер в значение поля ввода.
+    // Устанавливаем форматированный номер.
     input.value = formatted;
 }
 
 /*
  * Функция submitForm
  * Обрабатывает отправку формы.
- * Отменяет стандартное поведение отправки (чтобы страница не перезагружалась),
- * выводит сообщение об отправке формы через alert,
- * а затем сбрасывает форму (очищает все поля).
  */
 function submitForm(event) {
-    event.preventDefault(); // Отменяем стандартное поведение отправки формы.
-    alert("Форма отправлена!"); // Выводим сообщение об успешной отправке.
-    event.target.reset(); // Сбрасываем все поля формы.
+    event.preventDefault(); // Отменяем стандартное поведение.
+    alert("Форма отправлена!"); // Сообщение об успешной отправке.
+    event.target.reset(); // Сбрасываем поля формы.
 }
