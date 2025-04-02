@@ -1,421 +1,381 @@
-/*
- * Сброс отступов и базовые стили.
- */
 html, body {
     margin: 0;
     padding: 0;
-}
-body {
-    background: white;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: 'Gabarito', sans-serif;
 }
 
-/* Контейнер для центрирования всей страницы */
 .page-wrapper {
-    width: 1480px;    /* Фиксированная ширина */
-    margin: 0 auto;   /* Центрирование по горизонтали */
-    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-/*
- * Основной контейнер страницы.
- */
 .main-content-container {
+    width: 100%;
+    flex: 1;
+}
+
+.legal-services-container {
+    width: 100%;
+    min-height: 100vh;
+    background: url("../img/fond_index.png") center / cover no-repeat;
+    position: relative;
+    padding-top: 95px;
     box-sizing: border-box;
-    width: 1480px;
-    background: white;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 95px);
+    overflow: hidden;
+}
+
+.hero-section2 {
+    position: absolute;
+    top: 30px;
+    right: 5%;
+    text-align: right;
+    z-index: 2;
+}
+
+.hero-text {
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(24px, 4vw, 48px);
+    color: white;
+    margin-bottom: 20px;
+}
+
+.call-to-action-container {
+    display: inline-block;
+    cursor: pointer;
+    padding: clamp(8px, 2vw, 14px) clamp(16px, 3vw, 24px);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #E6CEAA, #C8A27B);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.call-to-action-heading {
+    font-family: "Advent Pro", sans-serif;
+    font-size: clamp(34px, 3vw, 34px);
+    color: #222;
+    margin: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.call-to-action-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle,
+    rgba(255,255,255,0.4) 10%,
+    transparent 10.01%);
+    background-size: 10px 10px;
+    opacity: 0.4;
+    animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+.negative-margin-top {
+    margin-top: 0 !important;
+}
+
+.image-container-fullscreen {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70%;
+    height: auto;
+    object-fit: contain;
+    max-height: 90%;
+}
+
+.advantages-gray-block {
+    border-radius: 20px;
+    background: linear-gradient(182deg,
+    rgba(50, 48, 46, 0.80) -12.42%,
+    rgba(42, 42, 42, 0.80) 211.74%
+    );
+    box-shadow: 0px 49px 250px 0px rgba(0, 0, 0, 0.25),
+    -1px -1px 20px 0px rgba(0, 0, 0, 0.13) inset,
+    1px 1px 14px 0px rgba(255, 255, 255, 0.09) inset;
+    backdrop-filter: blur(50px);
+    padding: 30px;
     margin: 0 auto;
 }
-.form-container {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
 
-/*
- * Контейнер для фонового изображения главной секции.
- */
-.legal-services-container {
-    box-sizing: border-box;
-    width: 1480px;
-    height: 800px;
-    padding-top: 95px;
-    background: url("../img/fond_index.png") 50% / cover no-repeat;
-    border: none;
-}
-
-/*
- * Полупрозрачный overlay для секции.
- */
-.legal-services-section {
-    box-sizing: border-box;
-    width: 100%;
-    background: rgba(41, 41, 40, 0.15);
-}
-
-/*
- * Секция Hero (баннер).
- */
-.hero-section {
-    width: 100%;
-    padding-top: 70px;
-}
-.hero-section2 {
-    padding: 0 100px 0 712px;
-}
-.call-to-action-container1 {
-    position: relative;
-    width: 668px;
-    height: 211px;
-}
-.hero-text {
-    position: absolute;
-    margin: 0;
-    font: 500 64px "Advent Pro", sans-serif;
-    color: white;
-}
-.call-to-action-container {
-    position: absolute;
-    top: 118px;
-    left: 309px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 359px;
-    height: 93px;
-    background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-.call-to-action-container:hover {
-    background: linear-gradient(135deg, #C8A27B 0%, #E6CEAA 100%);
-}
-.call-to-action-heading {
-    width: 272px;
-    margin: 0;
-    font: 600 36px "Advent Pro", sans-serif;
-    color: #222222;
+.legal-services-section1 {
+    padding: 40px 20px;
+    background: white;
     text-align: center;
 }
-.negative-margin-top {
-    margin-top: -174px;
-}
-.image-container-fullscreen {
-    display: block;
-    width: 1063px;
-    height: 598px;
-    object-fit: cover;
+
+.legal-services-card {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/*
- * Блок с иконками преимуществ.
- */
-.legal-services-section1 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: -28.5px;
-}
-.legal-services-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    width: 1280px;
-    height: 218px;
-    margin: 0 auto;
-    background: linear-gradient(
-            181.72deg,
-            rgba(50, 48, 46, 0.8) 12.41%,
-            rgba(42, 42, 42, 0.8) 211.72%
-    );
-    border-radius: 20px;
-    box-shadow:
-            inset 1px 1px 14px rgba(255, 255, 255, 0.09),
-            inset -1px -1px 20px rgba(0, 0, 0, 0.13),
-            0px 49px 250px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(100px);
-}
 .feature-box-group {
     display: flex;
-    flex-direction: row;
-    gap: 66px;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 40px 0 26px;
-}
-.vertical-card-group {
-    width: 195px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.circle-image-with-text {
-    display: block;
-    width: 73px;
-    height: 73px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto;
-}
-.hero-text-block {
-    margin: 12px 0 0;
-    font: 600 18px Gabarito;
-    color: white;
-    text-align: center;
-}
-.legal-services-card2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 197px;
-}
-.legal-services-icon {
-    width: 73px;
-    height: 73px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-.legal-assistance-promo-heading {
-    margin-top: 12px;
-    font: 600 18px/21.5px Gabarito;
-    color: white;
-    text-align: center;
-}
-.trust-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 197px;
-    padding-bottom: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-/*
- * Секция с формой (hero-section3).
- */
-.hero-section3 {
-    padding: 285px 293px 142px;
-    margin-top: -190px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.legal-assistance-form-container {
+.vertical-card-group {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    flex: 1 1 200px;
+    padding: 20px;
 }
+
+.hero-text-block {
+    font-family: 'Gabarito', sans-serif;
+    font-size: 20px;
+    margin: 10px 0;
+    color: white;
+}
+
+.circle-image-with-text {
+    width: 60px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.hero-section3 {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .legal-message {
+    font-size: 36px;
     margin: 0;
-    color: #050505;
 }
+
 .golden-sunrise-text {
-    font: 600 48px Gabarito;
-    background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
+    background: linear-gradient(135deg, #E6CEAA, #C8A27B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 .majestic-heading {
-    font: 600 48px Gabarito;
+    color: #222;
 }
+
 .legal-notice-text-style {
-    margin: 22px 0 0;
-    font: 400 24px Gabarito;
-    color: #050505;
-    text-align: center;
+    font-size: 20px;
+    margin: 20px 0;
 }
-.professional-help-form {
-    width: 100%;
-    padding: 0 112px;
-    margin-top: 48px;
-    display: flex;
-    justify-content: center;
-}
+
 .contact-form-container {
-    width: 639px;
+    max-width: 600px;
     margin: 0 auto;
 }
+
 .request-call-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.input-prompt-container {
-    padding: 0 43px;
-    text-align: left;
-}
+
 .gabarito-heading {
-    margin: 0;
-    font: 600 24px Gabarito;
-    color: #050505;
-    text-align: left;
+    font-size: 20px;
+    margin: 0 0 4px 0;
 }
-.fullwidth-box {
-    width: 547px;
-    margin-top: 12px;
-}
+
 .rounded-input-container {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
-    height: 75px;
-    padding-left: 28px;
-    color: #8c94a2;
     background: #ececec;
-    border: none;
     border-radius: 50px;
+    padding: 10px 20px;
 }
+
 .transparent-input-style {
     width: 100%;
-    background: transparent;
     border: none;
-    outline: none;
+    background: none;
     font-size: 16px;
-    font-family: inherit;
+    outline: none;
 }
-input[name="username"] {
-    maxlength: 50;
-}
-input[name="phone"] {
-    maxlength: 18;
-    placeholder: "+7 (___) ___-__-__";
-}
-.form-consent-text-container {
-    padding: 0 43px;
-}
+
 .form-consent-statement-container {
     display: flex;
-    flex-direction: row;
-    gap: 10px;
     align-items: flex-start;
-    max-width: 534px;
-    margin: 0 auto;
+    gap: 10px;
 }
-.checkbox-wrapper {
-    display: inline-flex;
-    align-items: center;
-    cursor: pointer;
-}
+
 .hidden-checkbox {
-    opacity: 0;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    margin: 0;
-    cursor: pointer;
+    display: none;
 }
+
 .custom-checkbox {
     width: 20px;
     height: 20px;
-    background: #fff;
     border: 1px solid #bbb;
     border-radius: 3px;
-    margin-right: 8px;
     position: relative;
 }
-.custom-checkbox::after {
+
+.hidden-checkbox:checked + .custom-checkbox::after {
     content: "";
     position: absolute;
-    display: none;
-    left: 0;
-    top: 0;
     width: 100%;
     height: 100%;
+    /* Подключаем check.png */
     background: url("../img/check.png") center/contain no-repeat;
 }
-.hidden-checkbox:checked + .custom-checkbox::after {
-    display: block;
-}
+
 .user-consent-text-container {
-    width: 490px;
-    margin: 0;
-    color: #050505;
-    font: 400 14px Gabarito;
-    text-align: left;
+    font-size: 14px;
 }
+
 .professional-help-button {
-    width: 639px;
-    height: 93px;
-    margin-top: 8px;
-    font: 600 24px Gabarito;
-    color: #222222;
-    background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
+    background: linear-gradient(135deg, #E6CEAA, #C8A27B);
     border: none;
+    padding: 15px;
     border-radius: 15px;
+    font-size: 20px;
     cursor: pointer;
-    transition: background 0.3s;
-    margin-left: auto;
-    margin-right: auto;
 }
-.professional-help-button:hover {
-    background: linear-gradient(135deg, #C8A27B 0%, #E6CEAA 100%);
-}
+
 .modal-overlay {
     display: none;
     position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-overlay.show {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.modal-content h2 {
+    font: 600 28px 'Advent Pro', sans-serif;
+    color: #222;
+    margin-top: 0;
+}
+
+.modal-content p {
+    font: 400 16px 'Gabarito', sans-serif;
+    color: #333;
+}
+
+.modal-close {
+    background: linear-gradient(135deg, #E6CEAA, #C8A27B);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font: 600 16px 'Gabarito', sans-serif;
+    color: #222;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.hidden-checkbox {
+    display: none;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    position: relative;
+    flex-shrink: 0;
+    background: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.hidden-checkbox:checked + .custom-checkbox::before {
+    content: "";
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    animation: fadeIn 0.5s;
+    background: url("../img/check.png") center/contain no-repeat;
+    background-size: 100% 100%;
 }
-.modal-content {
-    background-color: #fff;
-    border-radius: 20px;
-    max-width: 500px;
-    padding: 20px;
-    margin: 50px auto;
-    position: relative;
-    animation: scaleUp 0.5s;
-    z-index: 1001;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-@keyframes scaleUp {
-    0% {
-        transform: scale(0.8);
-        opacity: 0;
+
+@media (max-width: 768px) {
+
+    .legal-services-container {
+        padding-top: 60px;
     }
-    100% {
-        transform: scale(1);
-        opacity: 1;
+
+    .image-container-fullscreen {
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        max-height: none;
     }
-}
-.modal-overlay.show {
-    display: block;
-}
-.modal-content h2 {
-    font: 600 28px "Advent Pro", sans-serif;
-    margin: 0 0 12px 0;
-    color: #000;
-}
-.modal-content p {
-    font: 400 16px Gabarito, sans-serif;
-    margin: 0;
-    color: #222;
-    line-height: 1.4;
-}
-.modal-close {
-    display: inline-block;
-    margin-top: 20px;
-    background: #000;
-    color: #fff;
-    font: 600 16px Gabarito, sans-serif;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 20px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-.modal-close:hover {
-    background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
-    color: #292928;
+
+    .hero-text {
+        font-size: 32px;
+    }
+
+    .call-to-action-container {
+        padding: clamp(6px, 2vw, 10px) clamp(12px, 4vw, 18px);
+    }
+    .call-to-action-heading {
+        font-size: clamp(24px, 3vw, 24px);
+    }
+
+    .feature-box-group {
+        flex-direction: column;
+    }
+
+    .legal-message {
+        font-size: 24px;
+    }
+    .legal-notice-text-style {
+        font-size: 16px;
+    }
 }

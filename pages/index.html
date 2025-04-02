@@ -3,197 +3,146 @@
 <head>
     <meta charset="UTF-8" />
     <title>ЮРИСТ NN</title>
-
-    <!-- Подключение шрифтов из Google Fonts для использования в дизайне -->
-    <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Advent+Pro:wght@500;600&display=swap"
-    />
-    <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-    />
-
-    <!-- Настройка совместимости с IE и задание фиксированной ширины для адаптивности -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=1480, initial-scale=1.0" />
-
-    <!-- Подключение внешних CSS-файлов:
-         header.css – стили для шапки (header)
-         footer.css – стили для подвала (footer)
-         style.css – остальные общие стили сайта -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Advent+Pro:wght@500;600&display=swap" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/style.css" />
-
-    <!-- Подключение внешнего JavaScript-файла, который выполняется после загрузки DOM -->
     <script src="../js/script.js" defer></script>
 </head>
-
 <body>
-<!-- Основной контейнер заменён на класс page-wrapper для центрирования -->
 <div class="page-wrapper">
-    <!-- Основной блок контента сайта -->
     <div class="main-content-container">
-        <!-- ================ Шапка и меню сайта ================ -->
-        <div class="form-container">
-            <!-- Контейнер с фоновой картинкой главной секции -->
-            <div class="legal-services-container">
-                <!-- Наложение полупрозрачного слоя для затемнения/осветления фона -->
-                <div class="legal-services-section">
-                    <!-- Фиксированная шапка с навигацией -->
-                    <div class="main-navigation-container">
-                        <div class="header-navbar">
-                            <!-- Логотип сайта, обёрнутый в ссылку для перехода на главную страницу -->
-                            <a href="index.html" style="text-decoration: none;">
-                                <div class="logo-block">
-                                    <img src="../img/logo.png" alt="Юрист NN" class="avatar-image" />
-                                    <p class="lawyer-title">
-                                        <span class="legal-professional-title">ЮРИСТ NN</span>
-                                    </p>
-                                </div>
-                            </a>
-                            <!-- Основное меню сайта -->
-                            <div class="lawyer-menu-container main-nav">
-                                <a class="lawyer-card-style" href="lawyers.html">Наши юристы</a>
-                                <a class="lawyer-card-style" href="services.html">Услуги</a>
-                                <a class="testimonial-section-style" href="reviews.html">Отзывы</a>
-                                <a class="testimonial-section-style" href="about.html">О нас</a>
-                            </div>
+        <!-- Блок юридических услуг и навигация -->
+        <div class="legal-services-container">
+            <div class="main-navigation-container">
+                <div class="header-navbar">
+                    <a href="index.html" style="text-decoration: none;">
+                        <div class="logo-block">
+                            <img src="../img/logo.png" alt="Юрист NN" class="avatar-image" />
+                            <p class="lawyer-title">
+                                <span class="legal-professional-title">ЮРИСТ NN</span>
+                            </p>
                         </div>
+                    </a>
+                    <div class="burger-menu" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-
-                    <!-- Секция Hero (баннер) -->
-                    <div class="hero-section">
-                        <div class="hero-section2">
-                            <!-- Контейнер с основным слоганом и кнопкой призыва к действию -->
-                            <div class="call-to-action-container1">
-                                <!-- Основной слоган -->
-                                <p class="hero-text">Одна зацепка и дело наше</p>
-                                <!-- Кнопка "запросить звонок", при клике скроллит страницу до формы -->
-                                <div
-                                        class="call-to-action-container"
-                                        onclick="document.getElementById('callRequestForm').scrollIntoView({ behavior: 'smooth' });"
-                                >
-                                    <p class="call-to-action-heading">запросить звонок</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Изображение баннера, смещённое с помощью отрицательного отступа -->
-                        <div class="negative-margin-top">
-                            <img src="../img/hero.png" alt="Главный баннер" class="image-container-fullscreen" />
-                        </div>
+                    <div class="lawyer-menu-container main-nav">
+                        <a class="lawyer-card-style" href="lawyers.html">Наши юристы</a>
+                        <a class="lawyer-card-style" href="services.html">Услуги</a>
+                        <a class="testimonial-section-style" href="reviews.html">Отзывы</a>
+                        <a class="testimonial-section-style" href="about.html">О нас</a>
                     </div>
                 </div>
             </div>
 
-            <!-- ============ Блок с иконками преимуществ и формой ============ -->
-            <div class="legal-services-section1">
-                <!-- Карточка преимуществ (иконки + подписи) -->
-                <div class="legal-services-card">
-                    <div class="feature-box-group">
-                        <div class="vertical-card-group">
-                            <img src="../img/hammer.png" alt="Опыт" class="circle-image-with-text" />
-                            <p class="hero-text-block">Более 30 лет в деле</p>
-                        </div>
-                        <div class="vertical-card-group">
-                            <img src="../img/case.png" alt="Дела" class="circle-image-with-text" />
-                            <p class="hero-text-block">Берем любые дела</p>
-                        </div>
-                        <div class="legal-services-card2">
-                            <img src="../img/money.png" alt="Доступная помощь" class="legal-services-icon" />
-                            <p class="legal-assistance-promo-heading">
-                                Лучшая юридическая помощь в городе
-                            </p>
-                        </div>
-                        <div class="trust-section">
-                            <img src="../img/lock.png" alt="Безопасность" class="legal-services-icon" />
-                            <p class="legal-assistance-promo-heading">
-                                Нам можно доверять
-                            </p>
+            <!-- Баннер и призыв к действию -->
+            <div class="hero-section">
+                <div class="hero-section2">
+                    <div class="call-to-action-container1">
+                        <p class="hero-text">Одна зацепка и дело наше</p>
+                        <div class="call-to-action-container"
+                             onclick="document.getElementById('callRequestForm').scrollIntoView({ behavior: 'smooth' });">
+                            <p class="call-to-action-heading">запросить звонок</p>
                         </div>
                     </div>
                 </div>
+                <div class="negative-margin-top">
+                    <img src="../img/hero.png" alt="Главный баннер" class="image-container-fullscreen" />
+                </div>
+            </div>
+        </div>
 
-                <!-- Секция с формой обратной связи (оставьте заявку) -->
-                <div class="hero-section3" id="callRequestForm">
-                    <div class="legal-assistance-form-container">
-                        <!-- Заголовок формы -->
-                        <p class="legal-message">
-                            <span class="golden-sunrise-text">Закон на вашей стороне.</span>
-                            <span class="majestic-heading"> Мы тоже.</span>
-                        </p>
-                        <!-- Подзаголовок с пояснением -->
-                        <p class="legal-notice-text-style">
-                            Первый шаг к решению – оставьте заявку на разбор дела
-                        </p>
+        <!-- Карточки преимуществ и форма обратной связи -->
+        <div class="legal-services-section1">
+            <div class="legal-services-card advantages-gray-block">
+                <div class="feature-box-group">
+                    <div class="vertical-card-group">
+                        <img src="../img/hammer.png" alt="Опыт" class="circle-image-with-text" />
+                        <p class="hero-text-block">Более 30 лет в деле</p>
                     </div>
-                    <div class="professional-help-form">
-                        <div class="contact-form-container">
-                            <!-- Форма запроса звонка -->
-                            <form class="request-call-form" action="#" method="post">
-                                <!-- Поле для ввода имени -->
-                                <div class="input-prompt-container">
-                                    <p class="gabarito-heading">Введите имя</p>
-                                    <div class="fullwidth-box">
-                                        <div class="rounded-input-container">
-                                            <input
-                                                    type="text"
-                                                    name="username"
-                                                    placeholder="Например, Иван"
-                                                    class="transparent-input-style"
-                                                    maxlength="50"
-                                                    required
-                                            />
-                                        </div>
+                    <div class="vertical-card-group">
+                        <img src="../img/case.png" alt="Дела" class="circle-image-with-text" />
+                        <p class="hero-text-block">Берем любые дела</p>
+                    </div>
+                    <div class="vertical-card-group">
+                        <img src="../img/money.png" alt="Доступная помощь" class="circle-image-with-text" />
+                        <p class="hero-text-block">Лучшая юридическая помощь в городе</p>
+                    </div>
+                    <div class="vertical-card-group">
+                        <img src="../img/lock.png" alt="Безопасность" class="circle-image-with-text" />
+                        <p class="hero-text-block">Нам можно доверять</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-section3" id="callRequestForm">
+                <div class="legal-assistance-form-container">
+                    <p class="legal-message">
+                        <span class="golden-sunrise-text">Закон на вашей стороне.</span>
+                        <span class="majestic-heading"> Мы тоже.</span>
+                    </p>
+                    <p class="legal-notice-text-style">
+                        Первый шаг к решению – оставьте заявку на разбор дела
+                    </p>
+                </div>
+                <div class="professional-help-form">
+                    <div class="contact-form-container">
+                        <form class="request-call-form" action="#" method="post" style="text-align: left;">
+                            <div class="input-prompt-container">
+                                <p class="gabarito-heading">Введите имя</p>
+                                <div class="fullwidth-box">
+                                    <div class="rounded-input-container">
+                                        <input type="text" name="username"
+                                               placeholder="Например, Иван"
+                                               class="transparent-input-style"
+                                               maxlength="50" required />
                                     </div>
                                 </div>
-                                <!-- Поле для ввода номера телефона -->
-                                <div class="input-prompt-container">
-                                    <p class="gabarito-heading">Введите номер телефона</p>
-                                    <div class="fullwidth-box">
-                                        <div class="rounded-input-container">
-                                            <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    placeholder="+7 (___) ___-__-__"
-                                                    class="transparent-input-style"
-                                                    maxlength="18"
-                                                    oninput="maskPhone(this)"
-                                                    required
-                                            />
-                                        </div>
+                            </div>
+                            <div class="input-prompt-container">
+                                <p class="gabarito-heading">Введите номер телефона</p>
+                                <div class="fullwidth-box">
+                                    <div class="rounded-input-container">
+                                        <input type="tel" name="phone"
+                                               placeholder="+7 (___) ___-__-__"
+                                               class="transparent-input-style"
+                                               maxlength="18"
+                                               oninput="maskPhone(this)"
+                                               required />
                                     </div>
                                 </div>
-                                <!-- Блок с чекбоксом для согласия с условиями -->
-                                <div class="form-consent-text-container">
-                                    <div class="form-consent-statement-container">
-                                        <label class="checkbox-wrapper">
-                                            <input type="checkbox" class="hidden-checkbox" name="consent" required />
-                                            <span class="custom-checkbox"></span>
-                                        </label>
+                            </div>
+                            <div class="form-consent-text-container">
+                                <div class="form-consent-statement-container">
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" class="hidden-checkbox" name="consent" id="consentCheckbox" required />
+                                        <span class="custom-checkbox"></span>
                                         <span class="user-consent-text-container">
-                                                Отправляя заявку, я принимаю условия
-                                                <span class="user-agreement-text">Пользовательского соглашения</span>
-                                                и даю свое согласие на обработку моих персональных данных в соответствии с
-                                                <span class="user-agreement-text">Политикой конфиденциальности</span>
-                                            </span>
-                                    </div>
+                        Отправляя заявку, я принимаю условия
+                        <span class="user-agreement-text">Пользовательского соглашения</span>
+                        и даю согласие на обработку персональных данных
+                        в соответствии с
+                        <span class="user-agreement-text">Политикой конфиденциальности</span>
+                      </span>
+                                    </label>
                                 </div>
-                                <!-- Кнопка отправки формы -->
-                                <button type="submit" class="professional-help-button">
-                                    Получить помощь профессионала
-                                </button>
-                            </form>
-                        </div>
+                            </div>
+                            <button type="submit" class="professional-help-button">
+                                Получить помощь профессионала
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ==================== Подвал (Footer) ==================== -->
+        <!-- Нижняя часть: контакты и ссылки -->
         <div class="hero-section1">
-            <!-- Логотип в подвале, обёрнутый в ссылку для перехода на главную страницу -->
             <a href="index.html" style="text-decoration: none;">
                 <div class="lawyer-card">
                     <img src="../img/logo.png" alt="Юрист NN" class="avatar-image" />
@@ -202,30 +151,24 @@
                     </p>
                 </div>
             </a>
-            <!-- Меню подвала -->
             <div class="lawyer-services-section footer-menu">
                 <div class="legal-services-card1">
                     <div class="lawyer-section">
-                        <a href="lawyers.html" class="legal-expert-heading">Наши юристы</a>
+                        <a href="lawyers.html" class="legal-expert-heading footer-item">Наши юристы</a>
                     </div>
-                    <a href="services.html" class="legal-services-heading">Услуги</a>
+                    <a href="services.html" class="legal-services-heading footer-item">Услуги</a>
                 </div>
                 <div class="testimonial-section">
                     <div class="testimonial-container">
-                        <a href="reviews.html" class="testimonial-heading">Отзывы</a>
+                        <a href="reviews.html" class="testimonial-heading footer-item">Отзывы</a>
                     </div>
-                    <a href="about.html" class="testimonial-header">О нас</a>
+                    <a href="about.html" class="testimonial-header footer-item">О нас</a>
                 </div>
             </div>
-            <!-- Блок ссылок политики конфиденциальности и соглашения, а также иконки соцсетей -->
             <div class="legal-info-section footer-links">
                 <div class="privacy-policy-section">
-                    <a href="javascript:void(0)" onclick="openModal('privacy')">
-                        Политика конфиденциальности
-                    </a>
-                    <a href="javascript:void(0)" onclick="openModal('terms')">
-                        Пользовательское соглашение
-                    </a>
+                    <a href="javascript:void(0)" onclick="openModal('privacy')">Политика конфиденциальности</a>
+                    <a class="agree" href="javascript:void(0)" onclick="openModal('terms')">Пользовательское соглашение</a>
                 </div>
                 <div class="flex-image-container">
                     <img src="../img/telegram.png" alt="Telegram" class="box-image" />
@@ -237,23 +180,41 @@
     </div>
 </div>
 
-<!-- ================= Модальные окна ================= -->
-<!-- Модальное окно для политики конфиденциальности -->
+<!-- Модальные окна -->
 <div class="modal-overlay" id="modal-overlay-privacy" onclick="closeModal('privacy')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <h2>Политика конфиденциальности</h2>
         <p>
-            Общие положения 1.1. Настоящая Политика регулирует порядок обработки и защиты персональных данных пользователей сайта ...
+            <b>1. Общие положения</b><br>
+            1.1. Мы уважаем ваше право на конфиденциальность и обязуемся защищать ваши персональные данные.<br>
+            1.2. Настоящая Политика определяет, какие данные собираются и как они используются.<br><br>
+            <b>2. Сбор данных</b><br>
+            2.1. Мы собираем только данные, которые вы добровольно предоставляете при заполнении форм: имя, номер телефона.<br>
+            2.2. Данные используются исключительно для связи с вами и предоставления консультации.<br><br>
+            <b>3. Передача данных третьим лицам</b><br>
+            3.1. Мы не передаём ваши данные третьим лицам без вашего согласия, за исключением случаев, предусмотренных законом.<br><br>
+            <b>4. Хранение данных</b><br>
+            4.1. Данные хранятся в защищённой среде и используются строго по назначению.<br>
+            4.2. Вы можете запросить удаление своих данных, написав нам на почту:
+            <a href="mailto:office@advokatlink.ru">office@advokatlink.ru</a>
         </p>
         <button class="modal-close" onclick="closeModal('privacy')">Закрыть</button>
     </div>
 </div>
-<!-- Модальное окно для пользовательского соглашения -->
 <div class="modal-overlay" id="modal-overlay-terms" onclick="closeModal('terms')">
     <div class="modal-content" onclick="event.stopPropagation()">
         <h2>Пользовательское соглашение</h2>
         <p>
-            Общие положения 1.1. Настоящее Соглашение определяет правила пользования сайтом ...
+            Настоящее Пользовательское соглашение регулирует отношения между сайтом «ЮРИСТ NN» и пользователями, оставляющими заявки через формы обратной связи.<br><br>
+            <b>1. Общие положения</b><br>
+            1.1. Используя сайт, вы подтверждаете своё согласие с условиями Соглашения.<br>
+            1.2. Если вы не согласны с условиями — пожалуйста, прекратите использование сайта.<br><br>
+            <b>2. Услуги</b><br>
+            2.1. Сайт предоставляет возможность оставить заявку на получение консультации.<br>
+            2.2. Окончательная стоимость услуг определяется после общения с юристом.<br><br>
+            <b>3. Ответственность</b><br>
+            3.1. Администрация сайта не несёт ответственности за возможные убытки, связанные с использованием сайта.<br>
+            3.2. Все рекомендации, представленные на сайте, носят справочный характер и не являются юридически обязывающими.
         </p>
         <button class="modal-close" onclick="closeModal('terms')">Закрыть</button>
     </div>

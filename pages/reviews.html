@@ -1,761 +1,273 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>ЮРИСТ NN</title>
-
-  <!-- Подключение шрифтов из Google Fonts (как в index.html) -->
-  <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Advent+Pro:wght@500;600&display=swap"
-  />
-  <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
-  />
-
-  <!-- Адаптивность и фиксированная ширина (как в index.html) -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=1480, initial-scale=1.0" />
-
-  <!-- Подключение общих CSS-файлов для шапки и подвала, а также стилей сайта -->
-  <link rel="stylesheet" href="../css/header.css" />
-  <link rel="stylesheet" href="../css/footer.css" />
-  <link rel="stylesheet" href="../css/style.css" />
-
-  <!-- Подключение общего скрипта (например, для маски телефона, модалок и т.п.) -->
-  <script src="../js/script.js" defer></script>
-
-  <!-- Стили уникальных элементов конкретно для страницы reviews.html -->
-  <!-- Оставляем «как есть» из старого reviews.html, чтобы сохранить её уникальный дизайн -->
-  <style>
-    /* ===== Ниже скопирован блок уникальных стилей из исходного reviews.html ===== */
-
-    .main-container {
-      box-sizing: border-box;
-      min-width: 1480px;
-      background: white;
-    }
-    .main-navigation-container {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      padding-right: 26px;
-      background: #292928;
-    }
-    .header-navbar {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      height: 95px;
-    }
-    .profile-image-placeholder {
-      box-sizing: border-box;
-      display: block;
-      width: 39px;
-      max-width: initial;
-      height: 39px;
-      border: none;
-      object-fit: cover;
-    }
-    .lawyer-navigation-section {
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: row;
-      gap: 94px;
-      align-items: flex-start;
-      justify-content: flex-start;
-      margin-left: 8px;
-    }
-    .header-title {
-      flex: 0 0 auto;
-      padding: 0;
-      margin: 0;
-      color: white;
-    }
-    .legal-text-heading {
-      font: 500 32px "Advent Pro", sans-serif;
-      color: white;
-      text-align: left;
-    }
-    .legal-services-card1 {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 172px;
-      padding: 0;
-      padding-top: 5px;
-      margin: 0;
-      font: 500 24px "Advent Pro", sans-serif;
-      color: white;
-      text-align: center;
-    }
-    .testimonial-section-heading {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 172px;
-      padding: 0;
-      padding-top: 5px;
-      padding-bottom: 4.75px;
-      margin: 0;
-      font: 500 24px "Advent Pro", sans-serif;
-      color: white;
-      text-align: center;
-    }
-    .main-content-container {
-      box-sizing: border-box;
-      width: 100%;
-    }
-    .client-testimonials-container1 {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      width: 100%;
-    }
-    .client-testimonials-container2 {
-      box-sizing: border-box;
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
-    .client-testimonials-container {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      width: 1280px;
-      padding-top: 89px;
-      padding-bottom: 58px;
-    }
-    .testimonial-container4 {
-      flex: 0 0 auto;
-    }
-    .testimonial-container2 {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: flex-start;
-      width: 100%;
-      padding-right: 27px;
-    }
-    .legal-text-container {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      align-self: flex-start;
-      max-width: 1045px;
-      padding: 0;
-      margin: 0;
-      color: white;
-      text-align: left;
-    }
-    .standout-heading {
-      font: 600 44px Gabarito;
-      color: black;
-      text-align: left;
-    }
-    .standout-text {
-      font: 600 44px Gabarito;
-      color: black;
-      text-align: left;
-      letter-spacing: -0.44px;
-    }
-    .legal-statement-styler {
-      font: 600 44px Gabarito;
-      text-align: left;
-      letter-spacing: -0.44px;
-      background: linear-gradient(135deg, rgba(230, 206, 170, 1) 0%, rgba(200, 162, 123, 1) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .client-feedback-statement {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      max-width: 198px;
-      padding: 0;
-      margin: 0;
-      margin-top: 24.5px;
-      font: 400 16px Gabarito;
-      color: #222222;
-      text-align: left;
-    }
-    .testimonial-container {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      justify-content: flex-start;
-      width: 100%;
-      margin-top: 62px;
-    }
-    .testimonial-card1 {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 34.61%;
-    }
-    .testimonial-container5 {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      justify-content: flex-start;
-      max-width: 383px;
-      padding: 41px 34px 160px;
-      background: #fafafa;
-      border-radius: 20px;
-      box-shadow: inset 1px 1px 14px rgba(255, 255, 255, 0.09),
-      inset -1px -1px 20px rgba(0, 0, 0, 0.13),
-      0px 49px 250px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(100px);
-    }
-    .flexbox-container-with-image-and-text {
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: row;
-      gap: 8px;
-      align-items: flex-start;
-      justify-content: space-between;
-      padding-right: 22px;
-    }
-    .profile-image-container {
-      box-sizing: border-box;
-      display: block;
-      width: 83px;
-      max-width: initial;
-      height: 83px;
-      border: none;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-    .profile-card {
-      flex: 0 0 auto;
-      padding-bottom: 22px;
-    }
-    .golden-text-heading {
-      padding: 0;
-      margin: 0;
-      font: 700 20px Gabarito;
-      color: #c8a27b;
-    }
-    .business-info-text-style {
-      padding: 0;
-      margin: 0;
-      margin-top: 18px;
-      font: 500 16px Gilroy;
-      color: #222222;
-    }
-    .testimonial-text-styles {
-      flex: 0 0 auto;
-      align-self: center;
-      padding: 0;
-      margin: 0;
-      margin-top: 23px;
-      font: 400 14px Gabarito;
-      color: #222222;
-      text-align: left;
-      letter-spacing: -0.28px;
-    }
-    .testimonial-card2 {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 34.22%;
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-    .testimonial-container1 {
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: row;
-      align-items: stretch;
-      justify-content: flex-start;
-    }
-    .profile-card2 {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 30.79%;
-    }
-    .profile-card1 {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 69.21%;
-      padding-right: 15px;
-      padding-bottom: 22px;
-      padding-left: 15px;
-    }
-    .testimonial-card {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 31.17%;
-      padding-left: 15px;
-    }
-    .business-testimonial-card {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      padding-top: 41px;
-      padding-bottom: 160px;
-      background: #fafafa;
-      border-radius: 20px;
-      box-shadow: inset 1px 1px 14px rgba(255, 255, 255, 0.09),
-      inset -1px -1px 20px rgba(0, 0, 0, 0.13),
-      0px 49px 250px rgba(0, 0, 0, 0.25);
-      backdrop-filter: blur(100px);
-    }
-    .consultant-card {
-      box-sizing: border-box;
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: row;
-      gap: 8px;
-      align-items: flex-start;
-      justify-content: space-between;
-      min-width: 315px;
-    }
-    .testimonial-text {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      max-width: 315px;
-      padding: 0;
-      margin: 0;
-      margin-top: 23px;
-      font: 400 14px Gabarito;
-      color: #222222;
-      text-align: left;
-      letter-spacing: -0.42px;
-    }
-    .hero-image-container {
-      flex: 0 0 auto;
-      margin-top: -551px;
-    }
-    .image-container-styles {
-      box-sizing: border-box;
-      display: block;
-      width: 808px;
-      max-width: initial;
-      height: 569px;
-      border: none;
-      object-fit: cover;
-    }
-    .hero-section {
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      width: 100%;
-      padding: 69px 107px 68px;
-      margin-top: -18px;
-      background: #292928;
-    }
-    .lawyer-card {
-      box-sizing: border-box;
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: row;
-      align-items: center;
-      justify-content: flex-start;
-      width: 17.09%;
-      height: 69px;
-    }
-    .legal-text-block {
-      flex: 0 0 auto;
-      padding: 0;
-      margin: 0;
-      margin-left: 8px;
-      color: white;
-    }
-    .lawyer-services-container {
-      box-sizing: border-box;
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: row;
-      align-items: flex-start;
-      justify-content: flex-start;
-      width: 44.62%;
-      padding-right: 15px;
-      padding-left: 15px;
-    }
-    .legal-services-card {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 173px;
-      padding-bottom: 2.25px;
-    }
-    .legal-team-card {
-      padding-right: 13px;
-      padding-left: 13px;
-    }
-    .legal-expertise-card {
-      box-sizing: border-box;
-      width: 160px;
-      padding: 0;
-      margin: 0;
-      font: 500 24px "Advent Pro", sans-serif;
-      color: white;
-      text-align: center;
-    }
-    .legal-services-heading {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      margin-top: 11px;
-      font: 500 24px "Advent Pro", sans-serif;
-      color: white;
-      text-align: center;
-    }
-    .testimonial-section {
-      box-sizing: border-box;
-      flex: 0 0 auto;
-      width: 181px;
-      margin-left: 59px;
-    }
-    .testimonial-container3 {
-      padding-right: 9px;
-      padding-left: 9px;
-    }
-    .testimonial-heading {
-      box-sizing: border-box;
-      width: 172px;
-      padding: 0;
-      margin: 0;
-      font: 500 24px "Advent Pro", sans-serif;
-      color: white;
-      text-align: center;
-    }
-    .testimonial-header {
-      box-sizing: border-box;
-      width: 100%;
-      padding: 0;
-      margin: 0;
-      margin-top: 22.5px;
-      font: 500 24px "Advent Pro", sans-serif;
-      color: white;
-      text-align: center;
-    }
-    .flex-box-footer {
-      box-sizing: border-box;
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: row;
-      gap: 8px;
-      align-items: flex-end;
-      justify-content: space-between;
-      width: 38.28%;
-      padding-top: 13px;
-      padding-left: 15px;
-    }
-    .golden-underline-text-style {
-      padding: 0;
-      margin: 0;
-      font: 400 14px Gabarito;
-      text-decoration-line: underline;
-      letter-spacing: -0.14px;
-      background: linear-gradient(135deg, rgba(230, 206, 170, 1) 0%, rgba(200, 162, 123, 1) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .golden-underline-text-style1 {
-      padding: 0;
-      margin: 0;
-      margin-top: 18px;
-      font: 400 14px Gabarito;
-      text-decoration-line: underline;
-      letter-spacing: -0.14px;
-      background: linear-gradient(135deg, rgba(230, 206, 170, 1) 0%, rgba(200, 162, 123, 1) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .image-gallery-container {
-      display: flex;
-      flex: 0 0 auto;
-      flex-direction: row;
-      gap: 9.5px;
-      align-items: flex-end;
-      justify-content: flex-start;
-    }
-    .grid-thumbnail {
-      box-sizing: border-box;
-      display: block;
-      width: 49px;
-      max-width: initial;
-      height: 49px;
-    }
-
-    /* ==== Дополнительные стили для формы, если нужно её чуть сместить/адаптировать под верстку на этой странице ==== */
-    /* Можно добавить отступы или другие коррективы, если требуется */
-    .hero-section3 {
-      margin-top: 50px; /* Пример: приподнимаем форму ниже блока с отзывами */
-    }
-    /* При необходимости можно добавить дополнительные правки */
-  </style>
+    <meta charset="UTF-8" />
+    <title>ЮРИСТ NN</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;600&family=Advent+Pro:wght@500;600&display=swap" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/script.js" defer></script>
+    <style>
+        /* Секция отзывов клиентов */
+        .client-testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .standout-heading, .standout-text, .legal-statement-styler {
+            font: 600 44px Gabarito;
+            color: black;
+            margin: 0;
+        }
+        .standout-heading {
+            margin-top: 100px;
+        }
+        .legal-statement-styler {
+            background: linear-gradient(135deg, #E6CEAA, #C8A27B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .client-feedback-statement {
+            margin-top: 24px;
+            font: 400 16px Gabarito;
+            color: #222222;
+        }
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+            justify-content: center;
+        }
+        .testimonial-card1, .testimonial-card2, .testimonial-card {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 20px;
+            box-shadow: inset 1px 1px 14px rgba(255, 255, 255, 0.09),
+            inset -1px -1px 20px rgba(0, 0, 0, 0.13),
+            0px 49px 250px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(100px);
+        }
+        .flexbox-container-with-image-and-text {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .profile-image-container {
+            width: 83px;
+            height: 83px;
+            border-radius: 50%;
+        }
+        .golden-text-heading {
+            font: 700 20px Gabarito;
+            color: #c8a27b;
+        }
+        .business-info-text-style {
+            margin-top: 10px;
+            font: 500 16px Gabarito;
+            color: #222222;
+        }
+        .testimonial-text-styles, .testimonial-text {
+            margin-top: 20px;
+            font: 400 14px Gabarito;
+            color: #222222;
+        }
+        @media (max-width: 768px) {
+            .testimonial-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
 <body>
-<!-- Обёртка для центрирования, как в index.html -->
 <div class="page-wrapper">
-  <div class="main-content-container">
-
-    <!-- ======================= ШАПКА (header) из index.html ======================= -->
-    <div class="form-container">
-      <div class="legal-services-container">
-        <div class="legal-services-section">
-          <div class="main-navigation-container">
+    <div class="main-content-container">
+        <!-- Навигация -->
+        <div class="main-navigation-container">
             <div class="header-navbar">
-              <!-- Логотип и ссылка на главную -->
-              <a href="index.html" style="text-decoration: none;">
-                <div class="logo-block">
-                  <img src="../img/logo.png" alt="Юрист NN" class="avatar-image" />
-                  <p class="lawyer-title">
-                    <span class="legal-professional-title">ЮРИСТ NN</span>
-                  </p>
+                <a href="index.html" style="text-decoration: none;">
+                    <div class="logo-block">
+                        <img src="../img/logo.png" alt="Юрист NN" class="avatar-image" />
+                        <p class="lawyer-title">
+                            <span class="legal-professional-title">ЮРИСТ NN</span>
+                        </p>
+                    </div>
+                </a>
+                <div class="burger-menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-              </a>
-              <!-- Основное меню -->
-              <div class="lawyer-menu-container main-nav">
-                <a class="lawyer-card-style" href="lawyers.html">Наши юристы</a>
-                <a class="lawyer-card-style" href="services.html">Услуги</a>
-                <a class="testimonial-section-style" href="reviews.html">Отзывы</a>
-                <a class="testimonial-section-style" href="about.html">О нас</a>
-              </div>
+                <div class="lawyer-menu-container main-nav">
+                    <a class="lawyer-card-style" href="lawyers.html">Наши юристы</a>
+                    <a class="lawyer-card-style" href="services.html">Услуги</a>
+                    <a class="testimonial-section-style" href="reviews.html">Отзывы</a>
+                    <a class="testimonial-section-style" href="about.html">О нас</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- ====================== Конец шапки ====================== -->
 
-
-    <!-- =============== Уникальный контент страницы (Отзывы) =============== -->
-    <div class="client-testimonials-container1">
-      <div class="client-testimonials-container2">
+        <!-- Блок с отзывами -->
         <div class="client-testimonials-container">
-          <div class="testimonial-container4">
-            <div class="testimonial-container2">
-              <p class="legal-text-container">
-                <span class="standout-heading">У нас нет негативных отзывов</span>
-                <span class="standout-text">, так как </span>
-                <span class="legal-statement-styler">каждое дело прорабатывается командой квалифицированных юристов</span>
-              </p>
-              <p class="client-feedback-statement">
-                Все отзывы размещены с согласия клиентов
-              </p>
+            <div class="legal-text-container">
+                <p class="standout-heading">У нас нет негативных отзывов, так как</p>
+                <p class="legal-statement-styler">каждое дело прорабатывается командой</p>
+                <p class="legal-statement-styler">квалифицированных юристов</p>
+                <p class="client-feedback-statement">Реальные отзывы от тех, кто доверил нам свои дела</p>
             </div>
-
-            <!-- Блок с тремя отзывами -->
             <div class="testimonial-container">
-              <!-- 1-й отзыв -->
-              <div class="testimonial-card1">
-                <div class="testimonial-container5">
-                  <div class="flexbox-container-with-image-and-text">
-                    <img src="assets/image_2f648ac9.png" class="profile-image-container" />
-                    <div class="profile-card">
-                      <p class="golden-text-heading">Анатолий Белый</p>
-                      <p class="business-info-text-style">ИП</p>
+                <div class="testimonial-card1">
+                    <div class="flexbox-container-with-image-and-text">
+                        <img src="../img/beliy.png" alt="Клиент 1" class="profile-image-container" />
+                        <div>
+                            <p class="golden-text-heading">Анатолий Белый</p>
+                            <p class="business-info-text-style">ИП</p>
+                        </div>
                     </div>
-                  </div>
-                  <p class="testimonial-text-styles">
-                    В сложный момент, когда мой бизнес столкнулся с юридическими проблемами, Иван Валерьевич Зубов стал для меня настоящей опорой. Он детально разобрался в ситуации, грамотно выстроил стратегию защиты и помог избежать серьезных убытков. Благодарю за профессионализм и внимательность к деталям!
-                  </p>
+                    <p class="testimonial-text-styles">В сложный момент, когда мой бизнес столкнулся с юридическими проблемами,
+                        Иван Валерьевич Зубов стал для меня настоящей опорой. Он детально разобрался в ситуации,
+                        грамотно выстроил стратегию защиты и помог избежать серьезных убытков.
+                        Благодарю за профессионализм и внимательность к деталям!</p>
                 </div>
-              </div>
-              <!-- 2-й отзыв -->
-              <div class="testimonial-card2">
-                <div class="testimonial-container5">
-                  <div class="testimonial-container1">
-                    <div class="profile-card2">
-                      <img src="assets/image_de61c69d.png" class="profile-image-container" />
+                <div class="testimonial-card2">
+                    <div class="flexbox-container-with-image-and-text">
+                        <img src="../img/petrov.png" alt="Клиент 2" class="profile-image-container" />
+                        <div>
+                            <p class="golden-text-heading">Сергей Петров</p>
+                            <p class="business-info-text-style">ИП</p>
+                        </div>
                     </div>
-                    <div class="profile-card1">
-                      <p class="golden-text-heading">Сергей Петров</p>
-                      <p class="business-info-text-style">ИП</p>
-                    </div>
-                  </div>
-                  <p class="testimonial-text-styles">
-                    Стал жертвой недобросовестных партнеров, которые попытались оставить меня без бизнеса. Алексей Федорович не только помог мне разобраться в ситуации, но и грамотно выстроил защиту в суде. В результате – справедливое решение в мою пользу и восстановление репутации. Спасибо за компетентность и поддержку!
-                  </p>
+                    <p class="testimonial-text-styles">Стал жертвой недобросовестных партнеров, которые попытались оставить меня без бизнеса.
+                        Алексей Федорович не только помог мне разобраться в ситуации, но и грамотно выстроил защиту в суде.
+                        В результате – справедливое решение в мою пользу и восстановление репутации. Спасибо за компетентность и поддержку!</p>
                 </div>
-              </div>
-              <!-- 3-й отзыв -->
-              <div class="testimonial-card">
-                <div class="business-testimonial-card">
-                  <div class="consultant-card">
-                    <img src="assets/image_45380656.png" class="profile-image-container" />
-                    <div class="profile-card">
-                      <p class="golden-text-heading">Екатерина Власова</p>
-                      <p class="business-info-text-style">ИП</p>
+                <div class="testimonial-card">
+                    <div class="flexbox-container-with-image-and-text">
+                        <img src="../img/vlasova.png" alt="Клиент 3" class="profile-image-container" />
+                        <div>
+                            <p class="golden-text-heading">Екатерина Власова</p>
+                            <p class="business-info-text-style">ИП</p>
+                        </div>
                     </div>
-                  </div>
-                  <p class="testimonial-text">
-                    Неоднократно обращалась к Марии Александровне за консультациями по юридическим вопросам в сфере бизнеса. Его советы всегда точны, решения – эффективны, а подход – индивидуален. Благодаря ему я избежала множества рисков и защитила свой бизнес. Если вам нужен надежный адвокат – обращайтесь!
-                  </p>
+                    <p class="testimonial-text">Неоднократно обращалась к Марии Александровне за консультациями по юридическим вопросам в сфере бизнеса.
+                        Его советы всегда точны, решения – эффективны, а подход – индивидуален. Благодаря ему я избежала множества рисков и защитила свой бизнес.
+                        Если вам нужен надежный адвокат – обращайтесь!</p>
                 </div>
-              </div>
             </div>
-          </div>
-        </div>
-
-        <!-- ===== Здесь подключаем новую форму (как в index.html) ===== -->
-        <!-- Вместо старого блока формы из reviews.html вставляем форму из index.html -->
-        <div class="hero-section3" id="callRequestForm">
-          <div class="legal-assistance-form-container">
-            <p class="legal-message">
-              <span class="golden-sunrise-text">Закон на вашей стороне.</span>
-              <span class="majestic-heading"> Мы тоже.</span>
-            </p>
-            <p class="legal-notice-text-style">
-              Первый шаг к решению – оставьте заявку на разбор дела
-            </p>
-          </div>
-          <div class="professional-help-form">
-            <div class="contact-form-container">
-              <form class="request-call-form" action="#" method="post">
-                <!-- Поле «Имя» -->
-                <div class="input-prompt-container">
-                  <p class="gabarito-heading">Введите имя</p>
-                  <div class="fullwidth-box">
-                    <div class="rounded-input-container">
-                      <input
-                              type="text"
-                              name="username"
-                              placeholder="Например, Иван"
-                              class="transparent-input-style"
-                              maxlength="50"
-                              required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <!-- Поле «Телефон» -->
-                <div class="input-prompt-container">
-                  <p class="gabarito-heading">Введите номер телефона</p>
-                  <div class="fullwidth-box">
-                    <div class="rounded-input-container">
-                      <input
-                              type="tel"
-                              name="phone"
-                              placeholder="+7 (___) ___-__-__"
-                              class="transparent-input-style"
-                              maxlength="18"
-                              oninput="maskPhone(this)"
-                              required
-                      />
-                    </div>
-                  </div>
-                </div>
-                <!-- Чекбокс согласия -->
-                <div class="form-consent-text-container">
-                  <div class="form-consent-statement-container">
-                    <label class="checkbox-wrapper">
-                      <input type="checkbox" class="hidden-checkbox" name="consent" required />
-                      <span class="custom-checkbox"></span>
-                    </label>
-                    <span class="user-consent-text-container">
-                      Отправляя заявку, я принимаю условия
-                      <span class="user-agreement-text">Пользовательского соглашения</span>
-                      и даю свое согласие на обработку моих персональных данных в соответствии с
-                      <span class="user-agreement-text">Политикой конфиденциальности</span>
+            <div class="hero-section3">
+                <div class="professional-help-form">
+                    <div class="contact-form-container">
+                        <form class="request-call-form" action="#" method="post">
+                            <div class="input-prompt-container">
+                                <p class="gabarito-heading">Введите имя</p>
+                                <div class="fullwidth-box">
+                                    <div class="rounded-input-container">
+                                        <input type="text" name="username" placeholder="Например, Иван" class="transparent-input-style" maxlength="50" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="input-prompt-container">
+                                <p class="gabarito-heading">Введите номер телефона</p>
+                                <div class="fullwidth-box">
+                                    <div class="rounded-input-container">
+                                        <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" class="transparent-input-style" maxlength="18" oninput="maskPhone(this)" required />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-consent-text-container">
+                                <div class="form-consent-statement-container">
+                                    <label class="checkbox-wrapper">
+                                        <input type="checkbox" class="hidden-checkbox" name="consent" required />
+                                        <span class="custom-checkbox"></span>
+                                    </label>
+                                    <span class="user-consent-text-container">
+                      Отправляя заявку, я принимаю условия <span class="user-agreement-text">Пользовательского соглашения</span>
+                      и даю свое согласие на обработку моих персональных данных в соответствии с <span class="user-agreement-text">Политикой конфиденциальности</span>.
                     </span>
-                  </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="professional-help-button">Получить помощь профессионала</button>
+                        </form>
+                    </div>
                 </div>
-                <!-- Кнопка отправки -->
-                <button type="submit" class="professional-help-button">
-                  Получить помощь профессионала
-                </button>
-              </form>
             </div>
-          </div>
         </div>
-        <!-- ===== Конец нового блока формы ===== -->
-      </div>
-
-      <!-- Фоновое изображение из исходной reviews.html (если нужно), но чаще всего оно было частью старого хедера -->
-      <!-- В данном случае фоновое изображение убрали, так как оно дублирует главную страницу.
-           Если нужно оставить - перенесите сюда. -->
     </div>
-
-
-    <!-- ====================== Подвал (footer) из index.html ====================== -->
+    <!-- Подвал -->
     <div class="hero-section1">
-      <!-- Логотип с ссылкой на главную -->
-      <a href="index.html" style="text-decoration: none;">
-        <div class="lawyer-card">
-          <img src="../img/logo.png" alt="Юрист NN" class="avatar-image" />
-          <p class="legal-info-block">
-            <span class="legal-title-with-initials">ЮРИСТ NN</span>
-          </p>
+        <a href="index.html" style="text-decoration: none;">
+            <div class="lawyer-card">
+                <img src="../img/logo.png" alt="Юрист NN" class="avatar-image" />
+                <p class="legal-info-block">
+                    <span class="legal-title-with-initials">ЮРИСТ NN</span>
+                </p>
+            </div>
+        </a>
+        <div class="lawyer-services-section footer-menu">
+            <div class="lawyer-section">
+                <a href="lawyers.html" class="legal-expert-heading footer-item">Наши юристы</a>
+                <a href="services.html" class="legal-services-heading footer-item">Услуги</a>
+            </div>
+            <div class="testimonial-section">
+                <a href="reviews.html" class="testimonial-heading footer-item">Отзывы</a>
+                <a href="about.html" class="testimonial-header footer-item">О нас</a>
+            </div>
         </div>
-      </a>
-
-      <!-- Меню в подвале -->
-      <div class="lawyer-services-section footer-menu">
-        <div class="legal-services-card1">
-          <div class="lawyer-section">
-            <a href="lawyers.html" class="legal-expert-heading">Наши юристы</a>
-          </div>
-          <a href="services.html" class="legal-services-heading">Услуги</a>
+        <div class="legal-info-section footer-links">
+            <div class="privacy-policy-section">
+                <a href="javascript:void(0)" onclick="openModal('privacy')">Политика конфиденциальности</a>
+                <a class="agree" href="javascript:void(0)" onclick="openModal('terms')">Пользовательское соглашение</a>
+            </div>
+            <div class="flex-image-container">
+                <img src="../img/telegram.png" alt="Telegram" class="box-image" />
+                <img src="../img/vk.png" alt="VK" class="box-image" />
+                <img src="../img/youtube.png" alt="YouTube" class="box-image" />
+            </div>
         </div>
-        <div class="testimonial-section">
-          <div class="testimonial-container">
-            <a href="reviews.html" class="testimonial-heading">Отзывы</a>
-          </div>
-          <a href="about.html" class="testimonial-header">О нас</a>
-        </div>
-      </div>
-
-      <!-- Политика конфиденциальности, соглашение, соцсети -->
-      <div class="legal-info-section footer-links">
-        <div class="privacy-policy-section">
-          <a href="javascript:void(0)" onclick="openModal('privacy')">
-            Политика конфиденциальности
-          </a>
-          <a href="javascript:void(0)" onclick="openModal('terms')">
-            Пользовательское соглашение
-          </a>
-        </div>
-        <div class="flex-image-container">
-          <img src="../img/telegram.png" alt="Telegram" class="box-image" />
-          <img src="../img/vk.png" alt="VK" class="box-image" />
-          <img src="../img/youtube.png" alt="YouTube" class="box-image" />
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- ========================= Модальные окна (как в index.html) ========================= -->
-<!-- Модальное окно «Политика конфиденциальности» -->
-<div class="modal-overlay" id="modal-overlay-privacy" onclick="closeModal('privacy')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <h2>Политика конфиденциальности</h2>
-    <p>
-      Общие положения 1.1. Настоящая Политика регулирует порядок обработки и защиты персональных данных пользователей сайта ...
-    </p>
-    <button class="modal-close" onclick="closeModal('privacy')">Закрыть</button>
-  </div>
+    <div class="modal-overlay" id="modal-overlay-privacy">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2>Политика конфиденциальности</h2>
+            <p>
+                <b>1. Общие положения</b><br>
+                1.1. Мы уважаем ваше право на конфиденциальность и обязуемся защищать ваши персональные данные.<br>
+                1.2. Настоящая Политика определяет, какие данные собираются и как они используются.<br><br>
+                <b>2. Сбор данных</b><br>
+                2.1. Мы собираем только данные, которые вы добровольно предоставляете при заполнении форм: имя, номер телефона.<br>
+                2.2. Данные используются исключительно для связи с вами и предоставления консультации.<br><br>
+                <b>3. Передача данных третьим лицам</b><br>
+                3.1. Мы не передаём ваши данные третьим лицам без вашего согласия, за исключением случаев, предусмотренных законом.<br><br>
+                <b>4. Хранение данных</b><br>
+                4.1. Данные хранятся в защищённой среде и используются строго по назначению.<br>
+                4.2. Вы можете запросить удаление своих данных, написав нам на почту:
+                <a href="mailto:office@advokatlink.ru">office@advokatlink.ru</a>
+            </p>
+            <button class="modal-close" onclick="closeModal('privacy')">Закрыть</button>
+        </div>
+    </div>
+    <div class="modal-overlay" id="modal-overlay-terms">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <h2>Пользовательское соглашение</h2>
+            <p>
+                Настоящее Пользовательское соглашение регулирует отношения между сайтом «ЮРИСТ NN» и пользователями, оставляющими заявки через формы обратной связи.<br><br>
+                <b>1. Общие положения</b><br>
+                1.1. Используя сайт, вы подтверждаете своё согласие с условиями Соглашения.<br>
+                1.2. Если вы не согласны с условиями — пожалуйста, прекратите использование сайта.<br><br>
+                <b>2. Услуги</b><br>
+                2.1. Сайт предоставляет возможность оставить заявку на получение консультации.<br>
+                2.2. Окончательная стоимость услуг определяется после общения с юристом.<br><br>
+                <b>3. Ответственность</b><br>
+                3.1. Администрация сайта не несёт ответственности за возможные убытки, связанные с использованием сайта.<br>
+                3.2. Все рекомендации, представленные на сайте, носят справочный характер и не являются юридически обязывающими.
+            </p>
+            <button class="modal-close" onclick="closeModal('terms')">Закрыть</button>
+        </div>
+    </div>
 </div>
-<!-- Модальное окно «Пользовательское соглашение» -->
-<div class="modal-overlay" id="modal-overlay-terms" onclick="closeModal('terms')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <h2>Пользовательское соглашение</h2>
-    <p>
-      Общие положения 1.1. Настоящее Соглашение определяет правила пользования сайтом ...
-    </p>
-    <button class="modal-close" onclick="closeModal('terms')">Закрыть</button>
-  </div>
-</div>
-
 </body>
 </html>

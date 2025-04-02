@@ -1,85 +1,143 @@
-/*
- * Основной контейнер шапки и навигационного меню.
- * Изменения: для центрирования шапки вместо left: 0; используется left: 50% с transform.
- */
 .main-navigation-container {
     position: fixed;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 1480px;
-    height: 95px;
+    width: 100%;
     background: #292928;
     z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
+
 .header-navbar {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    padding: 20px;
     height: 95px;
-    padding-right: 26px;
+    box-sizing: border-box;
 }
+
 .logo-block {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    margin-right: 60px;
 }
+
 .avatar-image {
-    display: block;
     width: 39px;
     height: 39px;
     object-fit: cover;
-    border: none;
 }
-.lawyer-title {
-    margin-left: 8px;
-    color: white;
-}
+
 .legal-professional-title {
     font: 500 32px "Advent Pro", sans-serif;
     color: white;
-    white-space: nowrap;
+    margin-left: 10px;
 }
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-menu span {
+    width: 30px;
+    height: 3px;
+    background: white;
+}
+
 .lawyer-menu-container {
     display: flex;
-    flex-direction: row;
-    gap: 95px;
-    align-items: flex-start;
+    gap: 20px;
 }
-.lawyer-card-style {
-    box-sizing: border-box;
-    width: 172px;
-    padding-top: 5px;
-    font: 500 24px "Advent Pro", sans-serif;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-}
+
+.lawyer-card-style,
 .testimonial-section-style {
-    box-sizing: border-box;
-    width: 172px;
-    padding-top: 5px;
-    padding-bottom: 4.75px;
-    font: 500 24px "Advent Pro", sans-serif;
+    font: 500 20px "Advent Pro", sans-serif;
     color: white;
-    text-align: center;
     text-decoration: none;
-}
-.main-nav a {
-    color: #FFF;
-    text-decoration: none;
-    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
     border: 1px solid transparent;
-    border-radius: 8px;
-    padding: 5px 10px;
+    border-radius: 12px;
+    padding: 8px 16px;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
 }
-.main-nav a:hover {
-    background: linear-gradient(90deg, #E6CEAA 0%, #C8A27B 100%);
-    color: #292928;
-    text-decoration: none;
+
+.lawyer-card-style:hover,
+.testimonial-section-style:hover {
     border-color: #E6CEAA;
+    background: #E6CEAA;
+    color: #292928;
+}
+
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .lawyer-menu-container {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 95px;
+        left: 0;
+        width: 100%;
+        background: #292928;
+        padding: 15px 0;
+        gap: 15px;
+        align-items: center;
+        box-sizing: border-box;
+        z-index: 999;
+    }
+
+    .lawyer-menu-container.active {
+        display: flex;
+    }
+
+    .lawyer-card-style,
+    .testimonial-section-style {
+        font-size: 18px;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-radius: 12px;
+        width: 90%;
+        text-align: center;
+        background: transparent;
+        transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+
+    .lawyer-card-style:hover,
+    .testimonial-section-style:hover {
+        border-color: #E6CEAA;
+        background: #E6CEAA;
+        color: #292928;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 999px) {
+    .lawyer-menu-container {
+        gap: 30px;
+    }
+    .lawyer-card-style,
+    .testimonial-section-style {
+        font-size: 20px;
+        padding: 8px 16px;
+        border-radius: 10px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .header-navbar {
+        max-width: 1300px;
+        padding: 20px 40px;
+    }
+    .lawyer-menu-container {
+        gap: 40px;
+    }
+    .lawyer-card-style,
+    .testimonial-section-style {
+        font-size: 22px;
+        padding: 10px 18px;
+        border-radius: 10px;
+    }
 }
