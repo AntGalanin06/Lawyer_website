@@ -41,7 +41,7 @@ function handleTermsUpdate(value) {
       <section class="detailed-analysis-section">
         <div class="detailed-analysis-content">
           <div class="advocate-image-block">
-            <img src="/images/advocate.png" alt="Адвокат с телефоном" class="advocate-image" />
+            <img src="/images/hero/advocate.png" alt="Адвокат с телефоном" class="advocate-image" />
           </div>
           <CallRequestForm @open-modal="openModal" />
         </div>

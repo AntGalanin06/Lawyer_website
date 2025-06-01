@@ -30,11 +30,11 @@
 </template>
 
 <script setup>
-import tgImg from '/images/telegram.png'
-import vkImg from '/images/vk.png'
-import ytImg from '/images/youtube.png'
-import addressImg from '/images/address.png'
-import officeImg from '/images/office.jpeg'
+import tgImg from '/images/icons/telegram.png'
+import vkImg from '/images/icons/vk.png'
+import ytImg from '/images/icons/youtube.png'
+import addressImg from '/images/icons/address.png'
+import officeImg from '/images/icons/office.jpeg'
 </script>
 
 <style scoped>

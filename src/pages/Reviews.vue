@@ -4,7 +4,7 @@ import ReviewsBlock from '@/components/ReviewsBlock.vue'
 import CallRequestForm from '@/components/CallRequestForm.vue'
 import PrivacyPolicyModal from '@/components/PrivacyPolicyModal.vue'
 import UserAgreementModal from '@/components/UserAgreementModal.vue'
-import advocateImg from '/images/advocate.png'
+import advocateImg from '/images/hero/advocate.png'
 
 const showPrivacy = ref(false)
 const showTerms = ref(false)
