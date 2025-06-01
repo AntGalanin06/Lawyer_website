@@ -12,10 +12,10 @@
 </template>
 
 <script setup>
-import hammerImg from '/images/hammer.png'
-import caseImg from '/images/case.png'
-import moneyImg from '/images/money.png'
-import lockImg from '/images/lock.png'
+import hammerImg from '/images/icons/hammer.png'
+import caseImg from '/images/icons/case.png'
+import moneyImg from '/images/icons/money.png'
+import lockImg from '/images/icons/lock.png'
 
 const items = [
   { img: hammerImg, alt: 'Опыт', text: 'Более 30 лет в деле' },

@@ -24,9 +24,9 @@
 </template>
 
 <script setup>
-import beliyImg from '/images/beliy.png'
-import gordeevImg from '/images/gordeev.png'
-import vlasovaImg from '/images/vlasova.png'
+import beliyImg from '/images/lawyers/beliy.png'
+import gordeevImg from '/images/lawyers/gordeev.png'
+import vlasovaImg from '/images/lawyers/vlasova.png'
 
 const reviews = [
   {
