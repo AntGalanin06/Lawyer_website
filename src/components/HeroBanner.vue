@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import heroImg from '/images/hero.png'
+import heroImg from '/images/hero/hero.png'
 
 function scrollToForm() {
   const el = document.getElementById('callRequestForm')
@@ -29,7 +29,7 @@ function scrollToForm() {
 .legal-services-container {
   width: 100%;
   min-height: 100vh;
-  background: url("/images/fond_index.png") center / cover no-repeat;
+  background: url("/images/hero/fond_index.png") center / cover no-repeat;
   position: relative;
   padding-top: 95px;
   box-sizing: border-box;

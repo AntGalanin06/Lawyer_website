@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import logoImg from '/images/logo.png'
+import logoImg from '/images/icons/logo.png'
 import { ref } from 'vue'
 
 const companyName = 'ЮРИСТ NN'

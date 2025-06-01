@@ -52,18 +52,18 @@
 </template>
 
 <script setup>
-import zubovPhoto from '/images/zubov.png'
-import orlovaPhoto from '/images/orlova.png'
-import shevcovPhoto from '/images/shevcov.png'
-import zaharovaPhoto from '/images/zaharova.png'
-import karpovPhoto from '/images/karpov.png'
-import smirnovaPhoto from '/images/smirnova.png'
-import petrovPhoto from '/images/petrov.png'
-import volkovaPhoto from '/images/volkova.png'
-import sokolovPhoto from '/images/sokolov.png'
-import novikovaPhoto from '/images/novikova.png'
-import medvedevPhoto from '/images/medvedev.png'
-import morozovaPhoto from '/images/morozova.png'
+import zubovPhoto from '/images/lawyers/zubov.png'
+import orlovaPhoto from '/images/lawyers/orlova.png'
+import shevcovPhoto from '/images/lawyers/shevcov.png'
+import zaharovaPhoto from '/images/lawyers/zaharova.png'
+import karpovPhoto from '/images/lawyers/karpov.png'
+import smirnovaPhoto from '/images/lawyers/smirnova.png'
+import petrovPhoto from '/images/lawyers/petrov.png'
+import volkovaPhoto from '/images/lawyers/volkova.png'
+import sokolovPhoto from '/images/lawyers/sokolov.png'
+import novikovaPhoto from '/images/lawyers/novikova.png'
+import medvedevPhoto from '/images/lawyers/medvedev.png'
+import morozovaPhoto from '/images/lawyers/morozova.png'
 import { ref, computed } from 'vue'
 
 const lawyers = ref([

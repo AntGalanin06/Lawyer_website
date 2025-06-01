@@ -45,10 +45,10 @@
 </template>
 
 <script setup>
-import logoImg from '/images/logo.png'
-import tgImg from '/images/telegram.png'
-import vkImg from '/images/vk.png'
-import ytImg from '/images/youtube.png'
+import logoImg from '/images/icons/logo.png'
+import tgImg from '/images/icons/telegram.png'
+import vkImg from '/images/icons/vk.png'
+import ytImg from '/images/icons/youtube.png'
 
 const companyName = 'ЮРИСТ NN'
 const menuItems = [
@@ -118,13 +118,15 @@ function openModal(id) {
 }
 .privacy-policy-section a {
   font: 400 16px "Gabarito", sans-serif;
-  color: #C8A27B;
+  background: linear-gradient(135deg, #E6CEAA 0%, #C8A27B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-decoration: none;
   line-height: 1.5;
-  transition: color 0.2s, text-decoration 0.2s;
+  transition: opacity 0.2s, text-decoration 0.2s;
 }
 .privacy-policy-section a:hover {
-  color: #ffffff;
+  opacity: 0.8;
   text-decoration: underline;
 }
 .flex-image-container {
