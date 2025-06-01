@@ -9,5 +9,5 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/lawyer_website/',
+  base: '/Lawyer_website/',
 })
